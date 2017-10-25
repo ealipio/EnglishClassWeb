@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+//base files
+
+@import './app/styles/base/buttons.scss';
+@import './app/styles/base/normalize.scss';
+@import './app/styles/base/site.scss';
+
+
+//helpers
+@import './app/styles/helpers/mixins.scss';
+@import './app/styles/helpers/variables.scss';
+
+
+//vendor files
