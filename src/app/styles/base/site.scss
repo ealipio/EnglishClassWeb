@@ -1,13 +1,20 @@
 @import '../helpers/variables.scss';
+@import '../helpers/mixins.scss';
 
 html, body {
     font-family: $font-family;
     font-size: 16px;
 }
 
-a {
+a {    
     color: $color-white;
     &:hover {
-        color: $color-orange;
+        color: $color-orange;  
+    }    
+    @include bp(md){
+        color: $color-gray;
+        text-decoration: none;
+        position: relative;
+        cursor: pointer;
     }
 }

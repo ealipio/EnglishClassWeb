@@ -12,4 +12,9 @@ export class TopmenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  isMenuVisible: boolean = false;
+
+  showMobileMenu(){
+    this.isMenuVisible = !this.isMenuVisible; 
+  }
 }
