@@ -1,0 +1,34 @@
+@import '../../styles/helpers/variables.scss';
+@import '../../styles/helpers/mixins.scss';
+
+.home {
+    height: 100%;
+    background: linear-gradient(to right, $color-orange, rgba(14, 50, 53, 0.28));
+    position: relative;
+}
+
+.home__image { 
+    height: 100%;  
+    
+    background: url(/assets/imagenes/bienvenida.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.home__tittle {
+    background: $color-blue;
+    color: $color-white;
+    margin: 0;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    line-height: 4rem;
+    font-size: 1.5rem;
+    transform: translateY(-50%);
+    @include bp(md){
+        line-height: 6rem;
+        font-size: 2rem;
+    }
+}
