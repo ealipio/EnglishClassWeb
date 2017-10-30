@@ -11,25 +11,23 @@
     <div class="programation__filters"><b>Filters</b></div>
 
     <div class="programation__list"> 
-      <!-- iterator -->
-      <div class="programation__card">
-
-        <div class="programation__card-content">
-          <div class="programation__card-item">
-              <span><b>Nivel 3A - Giomara</b></span>
-              <span>Lunes - Miercoles</span>
+      <ng-container *ngFor="let group of groups">
+        <div class="programation__card">
+          <div class="programation__card-content">
+            <div class="programation__card-item">
+                <span><b>{{group.name}}</b></span><!--Change this! "teacher is just an example" -->
+                <span>Lunes - Miercoles</span>
+            </div>
+            <div class="programation__card-item programation__card-item--right">
+              <span><b class="programation__card__availability">7/10<i class="fa fa-user programation__card-user"></i></b></span>                
+              <span>8:00 - 9:00</span>
+            </div>          
           </div>
-          <div class="programation__card-item programation__card-item--right">
-            <span><b class="programation__card__availability">7/10<i class="fa fa-user programation__card-user"></i></b></span>                
-            <span>8:00 - 9:00</span>
-          </div>          
+          <div>
+            <i class="fa fa-chevron-right"></i>
+          </div>
         </div>
-
-        <div>
-          <i class="fa fa-chevron-right"></i>
-        </div>
-
-      </div>
+      </ng-container>
     </div>
 
 

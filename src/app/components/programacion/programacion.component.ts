@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClassGroupsService } from '../../services/class-groups.service';
 
 @Component({
   selector: 'app-programacion',
@@ -6,19 +7,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./programacion.component.scss']
 })
 export class ProgramacionComponent implements OnInit {
-
-  constructor() { }
+  buttonText = 'Generate Groups';
+  isSpinnerVisible = false;
+  isCardsVisible = true;
+  groups = null;
+  constructor(private classGroupsService: ClassGroupsService) {
+    this.getGroups();
+  }
 
   ngOnInit() {
   }
 
-  buttonText : string = "Generate Groups";
-  isSpinnerVisible : boolean = true;
-  isCardsVisible: boolean = false;
-
-  generateCards() {
+  private generateCards() {
     this.isSpinnerVisible = true;
-    this.buttonText = "Creating Groups";
-    this.isCardsVisible = !this.isCardsVisible;    
+    this.buttonText = 'Creating Groups';
+    this.isCardsVisible = !this.isCardsVisible;
+  }
+
+  private getGroups() {
+    this.classGroupsService.getGroups().subscribe(
+      result => {
+        this.groups = Object.keys(result).map( key => result[key]);
+      }, error => {
+        alert(`Error! --> ${error.statusText}`);
+      });
   }
 }
