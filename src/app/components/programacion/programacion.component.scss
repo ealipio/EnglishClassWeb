@@ -1,2 +1,116 @@
 @import '../../styles/helpers/variables.scss';
 @import '../../styles/helpers/mixins.scss';
+
+.programation {
+   display: flex;
+   flex-flow: column;
+   @include bp(md){
+    flex-flow: row;
+   }
+}
+
+.programation__year {
+    padding: 1rem;
+    color: $color-white;
+    background: $color-blue;
+    font-weight: bold;
+}
+
+.programation__groups {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+}
+
+.programation__filters {
+    color: $color-white;
+    background: $color-blue;
+    text-align: left;
+    padding: 1rem;
+    @include bp(md){
+        width: 10rem;
+        margin: 1rem;
+        border-radius: 0.5rem;
+    }
+}
+
+.programation__list {
+    /* max-width: 500px; */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 1rem;
+}
+
+.programation__card {
+    display: flex;
+    flex-direction: row;
+    width: 19.5rem;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0.5rem;
+    min-height: 3.25rem;
+    padding: 1rem;
+    color: $color-white;
+    background-color: $color-blue;
+    margin: 0 1rem 1rem 1rem;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-orange;
+        .programation__card__availability {
+            color: $color-blue;
+        }
+    }    
+    @include bp(md) {
+        width: 30rem;
+        margin-bottom: 1rem;
+    }
+    @include bp(lg){
+        width: 40rem;
+    }
+    @include bp(xl){
+        width: 50rem;
+    }
+}
+
+.programation__card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-right: 1rem;
+}
+
+.programation__card-item {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 3.25rem;
+    @include bp(md){
+        flex-direction: row;
+        min-height: 3rem;
+        align-items: center;
+        flex: 1 1 auto;
+        justify-content: space-around;
+    }
+}
+
+.programation__card-user {
+    margin-left: 0.5rem;
+}
+
+.programation__card-item--right {
+    align-items: flex-end;
+    @include bp(md){
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+}
+
+.programation__card__availability {
+    color: $color-orange;
+}

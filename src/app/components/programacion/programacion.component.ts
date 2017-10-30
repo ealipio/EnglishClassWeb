@@ -12,4 +12,13 @@ export class ProgramacionComponent implements OnInit {
   ngOnInit() {
   }
 
+  buttonText : string = "Generate Groups";
+  isSpinnerVisible : boolean = true;
+  isCardsVisible: boolean = false;
+
+  generateCards() {
+    this.isSpinnerVisible = true;
+    this.buttonText = "Creating Groups";
+    this.isCardsVisible = !this.isCardsVisible;    
+  }
 }

@@ -20,3 +20,15 @@ a {
         cursor: pointer;
     }
 }
+
+button {
+    background: $color-orange;
+    border: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: $color-white;
+    outline: 0;
+    &:hover {
+        background-color: $color-alt-orange;
+    }    
+}

@@ -1,3 +1,73 @@
-<p>
-  programacion works!
-</p>
+<div>
+  <div *ngIf="!isCardsVisible">
+      <div class="programation__year">English Classes 2018</div>
+      <button (click)="generateCards()" class="programation__groups">{{buttonText}}
+          <i *ngIf="isSpinnerVisible" class="fa fa-spinner fa-spin"></i>
+      </button>      
+  </div>
+  
+
+  <div *ngIf="isCardsVisible" class="programation">
+    <div class="programation__filters"><b>Filters</b></div>
+
+    <div class="programation__list"> 
+      <!-- iterator -->
+      <div class="programation__card">
+
+        <div class="programation__card-content">
+          <div class="programation__card-item">
+              <span><b>Nivel 3A - Giomara</b></span>
+              <span>Lunes - Miercoles</span>
+          </div>
+          <div class="programation__card-item programation__card-item--right">
+            <span><b class="programation__card__availability">7/10<i class="fa fa-user programation__card-user"></i></b></span>                
+            <span>8:00 - 9:00</span>
+          </div>          
+        </div>
+
+        <div>
+          <i class="fa fa-chevron-right"></i>
+        </div>
+
+      </div>
+    </div>
+
+
+      <!-- <div class="programation__card">
+        
+          <div>
+              <div class="programation__card__item">
+                  <span><b>Nivel 3A - Giomara</b></span>
+                  <span>Lunes - Miercoles</span>
+              </div>
+              <div class="programation__card__item">
+                <span><b class="programation__card__availability">7/10</b></span>                
+                <span>8:00 - 9:00</span>
+              </div>          
+          </div>
+          
+          <div>
+              <i class="fa fa-chevron-right"></i>
+          </div>
+      </div> -->
+
+      <!-- card -->
+      <!-- <div class="programation__card">
+        <div class="programation__card__item">
+          <span><b>Nivel 3A - Giomara</b></span>
+          <span><b class="programation__card__availability">7/10</b></span>
+        </div>
+        <div class="programation__card__item">
+          <span>Lunes - Miercoles</span>
+          <span>8:00 - 9:00</span>
+        </div>
+      </div> -->
+
+         
+      
+    
+
+  </div>
+
+
+</div>
