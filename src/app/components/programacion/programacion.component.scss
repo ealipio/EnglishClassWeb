@@ -4,8 +4,23 @@
 .programation {
    display: flex;
    flex-flow: column;
+   height: 100%; 
+   background: url(/assets/imagenes/background-cars.jpeg) no-repeat center center fixed;
+   background-size: cover;
+   min-height: 37.5rem;
    @include bp(md){
     flex-flow: row;
+    justify-content: center;
+    min-height: 59.5rem;   
+   }
+   @include bp(lg){
+    min-height: 45.5rem;
+   }
+   @include bp(xl){
+    min-height: 51.5rem;
+   }
+   @include bp(xxl){
+    min-height: 55rem;
    }
 }
 
@@ -28,21 +43,19 @@
     background: $color-blue;
     text-align: left;
     padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
     @include bp(md){
-        width: 10rem;
-        margin: 1rem;
+        margin: 1rem 1rem 1rem 0;
+        width: 11rem;
         border-radius: 0.5rem;
     }
 }
 
 .programation__list {
-    /* max-width: 500px; */
-    margin: 0 auto;
     display: flex;
     align-items: center;
     flex-direction: column;
-    position: relative;
-    top: 1rem;
+    margin-top: 1rem;
 }
 
 .programation__card {
@@ -51,16 +64,16 @@
     width: 19.5rem;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
     border-radius: 0.5rem;
     min-height: 3.25rem;
     padding: 1rem;
     color: $color-white;
     background-color: $color-blue;
-    margin: 0 1rem 1rem 1rem;
+    margin-bottom: 1rem;
     cursor: pointer;
     &:hover {
-        background-color: $color-orange;
+        background-color: $color-alt-orange;
         .programation__card__availability {
             color: $color-blue;
         }
@@ -89,13 +102,15 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    min-height: 3.25rem;
+    min-height: 4.5rem;
+    width: 100%;
     @include bp(md){
         flex-direction: row;
         min-height: 3rem;
         align-items: center;
         flex: 1 1 auto;
-        justify-content: space-around;
+        min-height: 3.25rem;
+        //justify-content: space-around;
     }
 }
 
@@ -113,4 +128,31 @@
 
 .programation__card__availability {
     color: $color-orange;
+}
+
+.programation__card-name {
+    width: 100%;
+    @include bp(md){
+        width: 40%;
+    }
+}
+
+.programation__card-schedule {
+    width: 100%;
+    @include bp(md){
+        width: 35%;
+    }
+    @include bp(lg){
+        width: 40%;
+    }
+}
+
+.programation__card-availability {
+    width: 100%;
+    @include bp(md){
+        width: 14%;
+    }
+    @include bp(lg){
+        width: 11%;
+    }
 }
