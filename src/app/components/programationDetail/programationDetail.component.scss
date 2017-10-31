@@ -1,0 +1,53 @@
+@import '../../styles/helpers/variables.scss';
+@import '../../styles/helpers/mixins.scss';
+
+.schedule__container {
+    background: url(/assets/imagenes/background-cars.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    min-height: 54.5rem;
+}
+
+.schedule {    
+    border: 2px solid $color-blue;
+    margin: 1rem;
+    color: $color-white;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    position: relative;
+    top: 3rem;   
+}
+
+.schedule__header {
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-blue;
+    padding: 1rem;
+}
+
+.schedule__body {
+    background: $color-white;
+    height: 20rem;
+}
+
+.schedule__footer {
+    background: $color-blue;
+    padding: 0.75rem;
+
+}
+
+.schedule__information {
+    display: flex;
+    flex-direction: column;
+    line-height: 2rem;
+}
+
+.schedule__users {
+    color: $color-orange;
+}
+
+.schedule__availability {
+  margin-left: 0.5rem;  
+}

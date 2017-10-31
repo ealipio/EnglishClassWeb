@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { TopmenuComponent } from './layout/topmenu/topmenu.component';
 import { HomeComponent } from './components//home/home.component';
 import { ProgramacionComponent } from './components//programacion/programacion.component';
+import { ProgramationDetailComponent } from './components/programationDetail/programationDetail.component';
 import { ClassGroupsService } from './services/class-groups.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'programacion', component: ProgramacionComponent },
+  { path: 'programacion/:id', component: ProgramationDetailComponent },
   { path: '**', redirectTo: 'home'}
 ];
 @NgModule({
@@ -20,7 +22,8 @@ const appRoutes: Routes = [
     AppComponent,
     TopmenuComponent,
     HomeComponent,
-    ProgramacionComponent
+    ProgramacionComponent,
+    ProgramationDetailComponent
 ],
   imports: [
     BrowserModule,

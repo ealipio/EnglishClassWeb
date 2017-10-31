@@ -22,7 +22,44 @@ result = {
         }
     ]
 };
+
+
+
+studentList =
+[
+    {
+        "idStudent": 1,
+        "names": "Angel Tapara Sotomayor",
+        "lastNames": "",
+        "idLevel": 2,
+        "level": null
+    },
+    {
+        "idStudent": 2,
+        "names": "Fernando Gonzales A.",
+        "lastNames": "",
+        "idLevel": 2,
+        "level": null
+    },
+    {
+        "idStudent": 3,
+        "names": "Henry Chávez",
+        "lastNames": "",
+        "idLevel": 2,
+        "level": null
+    },
+    {
+        "idStudent": 4,
+        "names": "Jhosbel Aguilar Rojas ",
+        "lastNames": "",
+        "idLevel": 2,
+        "level": null
+    }
+];
+
+
 API_ENDPOINT = 'http://192.168.1.167/EnglishCourseApi/api';
+
 constructor(private http: Http) { }
     public getGroups() {
         return  this.http.get(`${this.API_ENDPOINT}/example`)
