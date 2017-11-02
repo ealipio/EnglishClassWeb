@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageBox } from '../../shared/models/message-box';
 import { ClassGroupsService } from '../../services/class-groups.service';
-
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-programationDetail',
@@ -8,35 +9,31 @@ import { ClassGroupsService } from '../../services/class-groups.service';
   styleUrls: ['./programationDetail.component.scss']
 })
 
-export class ProgramationDetailComponent implements OnInit {
-
-  groups = null;
-  studenGroups = null;
-
-  constructor(private classGroupsService: ClassGroupsService) { 
-    this.getGroups();
+export class ProgramationDetailComponent extends MessageBox implements OnInit {
+  groupId: number;
+  groupDetail = null;
+  studentsList = null;
+  showDetail: boolean;
+  constructor(private route: ActivatedRoute, private classGroupsService: ClassGroupsService) {
+    super();
+    this.showDetail = false;
+    this.groupId = this.route.snapshot.params['id'];
+    this.getGroupById(this.groupId);
   }
 
   ngOnInit() {
   }
 
-
-  private getGroups() {
-    this.classGroupsService.getGroups().subscribe(
+  private getGroupById(groupId: number) {
+    this.classGroupsService.getGroupDetails(groupId).subscribe(
       result => {
-        this.groups = Object.keys(result).map( key => result[key]);
+        this.groupDetail = result.groupSummary;
+        this.studentsList = result.studentGroup;
+        this.showDetail = true;
       }, error => {
-        alert(`Error! --> ${error.statusText}`);
+        this.message = `Error: ${error.statusText}`;
+        this.messageType = 'error';
+        this.showMessage = true;
       });
   }
-
-  // private getGroupById() {
-  //   this.classGroupsService.getGroupById().subscribe(
-  //     result => {
-  //       this.studenGroups = Object.keys(result).map( key => result[key]);
-  //     }, error => {
-  //       alert(`Error! --> ${error.statusText}`);
-  //     });
-  // }
-
 }

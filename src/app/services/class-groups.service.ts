@@ -4,67 +4,21 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ClassGroupsService {
-result = {
-    'groups': [
-        {
-            'levelName': '1',
-            'teacherName': 'Robert',
-            'teacherLastName': 'teacher',
-            'scheduleDescription': '8:00am - 9:00am',
-            'students': 4
-        },
-        {
-            'levelName': '2',
-            'teacherName': 'Giomara',
-            'teacherLastName': 'teacher',
-            'scheduleDescription': 'Tarde 12-13:30',
-            'students': 4
-        }
-    ]
-};
 
 
-
-studentList =
-[
-    {
-        "idStudent": 1,
-        "names": "Angel Tapara Sotomayor",
-        "lastNames": "",
-        "idLevel": 2,
-        "level": null
-    },
-    {
-        "idStudent": 2,
-        "names": "Fernando Gonzales A.",
-        "lastNames": "",
-        "idLevel": 2,
-        "level": null
-    },
-    {
-        "idStudent": 3,
-        "names": "Henry Chávez",
-        "lastNames": "",
-        "idLevel": 2,
-        "level": null
-    },
-    {
-        "idStudent": 4,
-        "names": "Jhosbel Aguilar Rojas ",
-        "lastNames": "",
-        "idLevel": 2,
-        "level": null
-    }
-];
-
-
-API_ENDPOINT = 'http://192.168.1.167/EnglishCourseApi/api';
+API_ENDPOINT = 'http://englishcourseapi.azurewebsites.net/api';
 
 constructor(private http: Http) { }
     public getGroups() {
-        return  this.http.get(`${this.API_ENDPOINT}/example`)
+        return  this.http.get(`${this.API_ENDPOINT}/course/groupsummary`)
             .map( result => {
-                return result.json().teachers; // -- Change this! Is just an example
+                return result.json().groups;
+            });
+    }
+    public getGroupDetails(groupId: number) {
+        return  this.http.get(`${this.API_ENDPOINT}/course/studentsbygroup?groupId=${groupId}`)
+            .map( result => {
+                return result.json();
             });
     }
 }

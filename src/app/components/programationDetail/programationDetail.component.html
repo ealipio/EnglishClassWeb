@@ -1,20 +1,26 @@
 <div class="schedule__container">
-  <div class="schedule">
+  <!--<app-message-box [message]="message" [type]="messageType" [showMessage]="showMessage"></app-message-box>-->
+  <div class="schedule" *ngIf="showDetail">
     <div class="schedule__header">
       <div class="schedule__information">
-        <b><span>4A - Giomarandrea Arcia</span></b>
-        <span>Martes - Jueves | 12:00 - 13:00</span>
+        <b><span>Teacher: {{groupDetail.teacherName}} {{groupDetail.teacherLastName}} | Level: {{groupDetail.levelName}}</span></b>
+        <span>{{groupDetail.scheduleDescription}} | {{groupDetail.formattedStartHour}} - {{groupDetail.formattedEndHour}}</span>
       </div>
       
-      <span class="schedule__users"><b>7/10<i class="fa fa-user schedule__availability"></i></b></span>
+      <span class="schedule__users"><b>{{groupDetail.students}}/10<i class="fa fa-user schedule__availability"></i></b></span>
       
     </div>
     <div class="schedule__body">
-      students list    
+      <ul class="schedule-students">
+        <li class="schedule-students__header"><b>Students:</b></li>
+        <ng-container *ngFor="let student of studentsList">
+          <li class="schedule-student">{{student.firstname}} {{student.lastname}}</li>
+        </ng-container>
+      </ul>
     </div>
     <div class="schedule__footer">
         <button>Procesar</button>
-        <button routerLink="/programacion">Regresar</button>
+        <button class="button-default" routerLink="/programacion">Regresar</button>
     </div>
   </div>
 </div>

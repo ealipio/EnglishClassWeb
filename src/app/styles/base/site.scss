@@ -30,5 +30,12 @@ button {
     outline: 0;
     &:hover {
         background-color: $color-alt-orange;
-    }    
+    }
+}
+.button-default{
+    background-color: $color-lightgray;
+    color: $color-black;
+    &:hover {
+        background-color: $color-alt-lightgray;
+    }
 }

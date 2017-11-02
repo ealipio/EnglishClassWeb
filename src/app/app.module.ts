@@ -9,6 +9,8 @@ import { HomeComponent } from './components//home/home.component';
 import { ProgramacionComponent } from './components//programacion/programacion.component';
 import { ProgramationDetailComponent } from './components/programationDetail/programationDetail.component';
 import { ClassGroupsService } from './services/class-groups.service';
+import { MessageBoxComponent } from './shared/components/message-box/message-box.component';
+import { MessageBoxTypeDirective } from './shared/directives/message-box-type.directive';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,7 +25,9 @@ const appRoutes: Routes = [
     TopmenuComponent,
     HomeComponent,
     ProgramacionComponent,
-    ProgramationDetailComponent
+    ProgramationDetailComponent,
+    MessageBoxComponent,
+    MessageBoxTypeDirective
 ],
   imports: [
     BrowserModule,

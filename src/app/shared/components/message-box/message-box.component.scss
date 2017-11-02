@@ -1,0 +1,19 @@
+@import '../../../styles/helpers/variables.scss';
+
+.message-box {
+    width: 80rem;
+    background-color: $color-lightgray;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    border-radius: .5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
+}
+
+.message-box--error {
+    color: $color-error;
+    background-color: $color-bckg-error;
+}

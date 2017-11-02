@@ -49,5 +49,17 @@
 }
 
 .schedule__availability {
-  margin-left: 0.5rem;  
+    margin-left: 0.5rem;  
+}
+
+.schedule-students__header{
+    color: $color-black;
+    font-size: 1em;
+    margin: 1rem;
+}
+.schedule-student{
+    color: $color-black;
+    font-size: .9em;
+    margin: 1rem;
+    padding: 0 2rem
 }

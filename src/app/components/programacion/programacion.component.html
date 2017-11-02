@@ -9,20 +9,23 @@
   <div *ngIf="isCardsVisible" class="programation">
     <div class="programation__filters"><b>Filters</b></div>
 
-    <div class="programation__list"> 
+    <div class="programation__list">
+      <app-message-box [message]="message" [type]="messageType" [showMessage]="showMessage"></app-message-box>
       <ng-container *ngFor="let group of groups">
-        <div class="programation__card"  routerLink="/programacion/{{group.idTeacher}}">
+        <a routerLink="/programacion/{{group.idGroup}}">
+        <div class="programation__card">
           <div class="programation__card-content">
             <div class="programation__card-item">
-                <span class="programation__card-name"><b>3B - {{group.name}} {{group.lastName}}</b></span><!--Change this! "teacher is just an example" -->
-                <span class="programation__card-schedule">Lunes - Miercoles 8:00 - 9:00</span>          
-                <span class="programation__card-availability"><b class="programation__card__availability">7/10<i class="fa fa-user programation__card-user"></i></b></span>
+                <span class="programation__card-name"><b>{{group.levelName}} - {{group.teacherName}} {{group.teacherLastName}}</b></span>
+                <span class="programation__card-schedule">{{group.scheduleDescription}} {{group.formattedStartHour}} - {{group.formattedEndHour}}</span>          
+                <span class="programation__card-availability"><b class="programation__card__availability">{{group.students}}/10<i class="fa fa-user programation__card-user"></i></b></span>
             </div>          
           </div>
           <div>
             <i class="fa fa-chevron-right"></i>
           </div>
         </div>
+        </a>
       </ng-container>
     </div>
   </div>
