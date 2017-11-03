@@ -1,16 +1,16 @@
 <div class="menu"> 
   <img src="../../assets/imagenes/Belatrix.png" alt="belatrixLogo">
-  <i class="fa fa-bars menu__bar" (click)="showMobileMenu()"></i>
+  <i class="fa fa-bars menu__bar" (click)="toogleMobileMenu()"></i>
   <ul class="menu__list--desktop">
   <li><a class="menu__item" routerLink="/home">Home</a></li>
   <li><a class="menu__item" routerLink="/programacion">Programation</a></li>
-  <li><a class="menu__item">Assistance</a></li>
-  <li><a class="menu__item">History</a></li>
+  <li><a class="menu__item" routerLink="/assistance">Assistance</a></li>
+  <li><a class="menu__item" routerLink="/history">History</a></li>
 </ul>
 </div>
-<ul class="menu__list" *ngIf="isMenuVisible">
-  <li><a routerLink="/home">Home</a></li>
-  <li><a routerLink="/programacion">Programation</a></li>
-  <li><a >Assistance</a></li>
-  <li><a >History</a></li>
+<ul class="menu__list" [@navbarState]="state">
+  <li (click)="navigate('/home')"><a>Home</a></li>
+  <li (click)="navigate('/programacion')"><a>Programation</a></li>
+  <li (click)="navigate('/assistance')"><a >Assistance</a></li>
+  <li (click)="navigate('/history')"><a >History</a></li>
 </ul>

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { TopmenuComponent } from './layout/topmenu/topmenu.component';
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, {useHash: true}),
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule
   ],
   providers: [ClassGroupsService],
   bootstrap: [AppComponent],
