@@ -4,19 +4,25 @@
     <div class="schedule__header">
       <div class="schedule__information">
         <b><span>Teacher: {{groupDetail.teacherName}} {{groupDetail.teacherLastName}} | Level: {{groupDetail.levelName}}</span></b>
-        <span>{{groupDetail.scheduleDescription}} | {{groupDetail.formattedStartHour}} - {{groupDetail.formattedEndHour}}</span>
+        <span class="schedule__detail">{{groupDetail.scheduleDescription}} | {{groupDetail.formattedStartHour}} - {{groupDetail.formattedEndHour}}</span>
       </div>
       
       <span class="schedule__users"><b>{{groupDetail.students}}/10<i class="fa fa-user schedule__availability"></i></b></span>
       
     </div>
-    <div class="schedule__body">
-      <ul class="schedule-students">
-        <li class="schedule-students__header"><b>Students:</b></li>
-        <ng-container *ngFor="let student of studentsList">
-          <li class="schedule-student">{{student.firstname}} {{student.lastname}}</li>
-        </ng-container>
-      </ul>
+    <div class="schedule__body">     
+
+      <div><b>Students:</b></div>
+      <ng-container *ngFor="let student of studentsList">
+        <div class="schedule__student">
+          <span><b>{{student.name}} {{student.lastname}}</b></span>
+          <span>
+            <span class="schedule__student-transfer"><i><span class="schedule__student-option">Transfer</span></i><i class="fa fa-share"></i></span>
+            <span class="schedule__student-remove"><i><span class="schedule__student-option">Remove</span></i><i class="fa fa-times"></i></span>
+          </span>
+        </div>
+      </ng-container>
+
     </div>
     <div class="schedule__footer">
         <button>Procesar</button>

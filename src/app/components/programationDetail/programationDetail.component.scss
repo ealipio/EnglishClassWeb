@@ -4,7 +4,19 @@
 .schedule__container {
     background: url(/assets/imagenes/background-cars.jpeg) no-repeat center center fixed;
     background-size: cover;
-    min-height: 54.5rem;
+    min-height: 38rem;
+    @include bp(md){
+        min-height: 60rem;
+    }
+    @include bp(lg){
+        min-height: 46rem;
+    }
+    @include bp(xl){
+        min-height: 52rem;
+    }
+    @include bp(xxl){
+        min-height: 55rem;
+    }
 }
 
 .schedule {    
@@ -29,7 +41,8 @@
 
 .schedule__body {
     background: $color-white;
-    height: 20rem;
+    color:$color-blue;
+    padding: 1rem;
 }
 
 .schedule__footer {
@@ -44,6 +57,10 @@
     line-height: 2rem;
 }
 
+.schedule__detail {
+    text-transform: capitalize;
+}
+
 .schedule__users {
     color: $color-orange;
 }
@@ -52,14 +69,28 @@
     margin-left: 0.5rem;  
 }
 
-.schedule-students__header{
-    color: $color-black;
-    font-size: 1em;
-    margin: 1rem;
+.schedule__student {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2rem;
+    margin: 0.5rem 0 0 1rem;
 }
-.schedule-student{
-    color: $color-black;
-    font-size: .9em;
-    margin: 1rem;
-    padding: 0 2rem
+
+.schedule__student-transfer {
+    color: $color-blue;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.schedule__student-remove {
+    color: $color-red;
+    cursor: pointer;
+}
+
+.schedule__student-option {
+    display: none;
+    @include bp(md){
+        display: inline-block;
+        margin-right: 0.5rem;
+    }
 }

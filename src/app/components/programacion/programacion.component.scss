@@ -8,13 +8,14 @@
    background: url(/assets/imagenes/background-cars.jpeg) no-repeat center center fixed;
    background-size: cover;
    min-height: 37.5rem;
-   @include bp(md){
-    flex-flow: row;
-    justify-content: center;
-    min-height: 59.5rem;   
+   @include bp(md){    
+    min-height: 60rem;   
    }
    @include bp(lg){
+    flex-flow: row;
+    justify-content: center;
     min-height: 45.5rem;
+    padding-left: 18rem;
    }
    @include bp(xl){
     min-height: 51.5rem;
@@ -44,10 +45,13 @@
     text-align: left;
     padding: 1rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
-    @include bp(md){
-        margin: 1rem 2rem 1rem 0;
-        width: 11rem;
+    @include bp(lg){
         border-radius: 0.5rem;
+        position: fixed;
+        left: 1rem;
+        width: 15rem;
+        margin-top: 1rem;
+        min-height: 25rem;
     }
 }
 
@@ -79,7 +83,7 @@
         }
     }    
     @include bp(md) {
-        width: 30rem;
+        width: 40rem;
         margin-bottom: 1rem;
     }
     @include bp(lg){
@@ -139,8 +143,9 @@
 
 .programation__card-schedule {
     width: 100%;
+    text-transform: capitalize;
     @include bp(md){
-        width: 35%;
+        width: 55%;
     }
     @include bp(lg){
         width: 40%;

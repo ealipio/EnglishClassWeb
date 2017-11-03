@@ -9,6 +9,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    width: 92%;
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    @include bp(md){
+        width: 98%;
+    }
 }
 
 .menu__list {
@@ -16,7 +23,10 @@
     padding: 1rem;
     line-height: 2rem;
     z-index: 10;
-    position: relative;
+    z-index: 9;
+    top: 4.3rem;
+    position: fixed;
+    width: 92%;
     @include bp(md){
         display: none;
     }    
