@@ -15,10 +15,19 @@ constructor(private http: Http) { }
                 return result.json().groups;
             });
     }
+
     public getGroupDetails(groupId: number) {
         return  this.http.get(`${this.API_ENDPOINT}/course/studentsbygroup?groupId=${groupId}`)
             .map( result => {
                 return result.json();
             });
     }
+
+    public getGroupStatus() {
+        return  this.http.get(`${this.API_ENDPOINT}/course/runstatus`)
+            .map( result => {
+                 return result.json().status;
+            });
+    }
+
 }

@@ -7,6 +7,7 @@ import { ClassGroupsService } from '../../services/class-groups.service';
   templateUrl: './programacion.component.html',
   styleUrls: ['./programacion.component.scss']
 })
+
 export class ProgramacionComponent extends MessageBox implements OnInit {
   buttonText = 'Generate Groups';
   isSpinnerVisible = false;
@@ -15,18 +16,36 @@ export class ProgramacionComponent extends MessageBox implements OnInit {
   constructor(private classGroupsService: ClassGroupsService) {
     super();
     this.getGroups();
+    this.getGroupStatus();
   }
+
   ngOnInit() {
   }
+
   private generateCards() {
+    var vm = this;
     this.isSpinnerVisible = true;
-    this.buttonText = 'Creating Groups';
-    this.isCardsVisible = !this.isCardsVisible;
+    this.buttonText = 'Creating Groups';   
+    setTimeout(function(){ 
+      vm.isCardsVisible = true;
+    }, 800, vm);    
   }
+
   private getGroups() {
     this.classGroupsService.getGroups().subscribe(
       result => {
-        this.groups = result; // Object.keys(result).map( key => result[key]);
+        this.groups = result;
+      }, error => {
+        this.message = `Error: ${error.statusText}`;
+        this.messageType = 'error';
+        this.showMessage = true;
+      });
+  }
+
+  private getGroupStatus (){
+    this.classGroupsService.getGroupStatus().subscribe(
+      result => {
+        this.isCardsVisible = result;
       }, error => {
         this.message = `Error: ${error.statusText}`;
         this.messageType = 'error';
