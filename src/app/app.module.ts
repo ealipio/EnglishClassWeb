@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopmenuComponent } from './layout/topmenu/topmenu.component';
 import { HomeComponent } from './components//home/home.component';
@@ -12,14 +13,8 @@ import { ProgramationDetailComponent } from './components/programationDetail/pro
 import { ClassGroupsService } from './services/class-groups.service';
 import { MessageBoxComponent } from './shared/components/message-box/message-box.component';
 import { MessageBoxTypeDirective } from './shared/directives/message-box-type.directive';
+import { AuthorizationService } from './shared/services/authorization.service';
 
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'programacion', component: ProgramacionComponent },
-  { path: 'programacion/:id', component: ProgramationDetailComponent },
-  { path: '**', redirectTo: 'home'}
-];
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,12 +26,12 @@ const appRoutes: Routes = [
     MessageBoxTypeDirective
 ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
-    RouterModule.forRoot(appRoutes, {useHash: true}),
     HttpModule,
     BrowserAnimationsModule
   ],
-  providers: [ClassGroupsService],
+  providers: [ClassGroupsService, AuthorizationService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
