@@ -1,0 +1,108 @@
+@import '../../styles/helpers/variables.scss';
+@import '../../styles/helpers/mixins.scss';
+
+.student-pre-inscription__alert {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.student-pre-inscription__header {
+    color: $color-white;
+    background: $color-blue;
+    position: relative;
+    z-index: 10;
+    text-align: left;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
+}
+
+.student-pre-inscription__body {
+    display: flex;
+    height: calc(100% - 54px);
+    background: url(/assets/imagenes/background-cars.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.student-pre-inscription__content {
+    max-width: 700px;
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    right: 0;
+    box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
+    margin: 0 0.25rem;
+    @include bp(md){
+        margin: 0 auto;
+    }
+}
+
+.student-pre-inscription__information {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    margin-bottom: 1rem;
+    @include bp(md){
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.radio__group {
+    margin: 0.5rem 1rem 1rem 0.5rem;
+}
+
+.radio__text {
+    line-height: 1.75rem;
+    margin-left: 1rem;
+}
+
+.input__container {
+    position: relative;
+    margin-bottom: 1rem;        
+    @include bp(md) {
+        margin-bottom: 0;
+    }
+}
+
+.input__label {
+    position: absolute;
+    top: 0.75rem;
+    color: #999;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    transition: 0.4s ease all;
+    -moz-transition: 0.4s ease all;
+    -webkit-transition: 0.4s ease all;
+}
+
+.input__label--selected {
+    font-size: 12px;
+    color: $color-orange;
+    top: 0;
+}
+
+.input__item {
+    padding: 15px 10px 5px 0px;
+    display: block;
+    width: 330px;
+    border: none;
+    border-bottom: 1px solid #757575;
+    outline: none;
+    @include bp(md){
+        width: 300px;
+    }
+}
+
+.input__item--selected {
+    border-bottom: 2px solid $color-orange;
+    transition: 0.4s ease all;
+    -moz-transition: 0.4s ease all;
+    -webkit-transition: 0.4s ease all;
+}

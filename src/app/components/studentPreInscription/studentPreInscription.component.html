@@ -1,0 +1,36 @@
+<div class="student-pre-inscription__header"><b>Welcome to English Pre - Inscription</b></div>
+<div class="student-pre-inscription__body">
+  <div *ngIf="showMessage" class="student-pre-inscription__alert">
+    <app-message-box [message]="message" [type]="messageType" [showMessage]="showMessage"></app-message-box>
+  </div>
+
+  <div class="student-pre-inscription__content" *ngIf="!showMessage">
+    <div class="student-pre-inscription__information">
+
+      <div class="input__container">
+        <input type="text" class="input__item" [(ngModel)]="fullName" [ngClass]="{'input__item--selected ': fullName !== '' }">
+        <span class="input__label" [ngClass]="{'input__label--selected ': fullName !== '' }">Full Name</span>
+      </div>
+
+      <div class="input__container">
+          <input type="text" class="input__item" [(ngModel)]="email" [ngClass]="{'input__item--selected ': email !== '' }">
+          <span class="input__label" [ngClass]="{'input__label--selected ': email !== ''}">Email</span>
+        </div>
+
+    </div>
+
+    <div>
+      <b><span>Select Schedule:</span></b>
+      <form class="radio__group">
+          <input type="radio" name="studentSchedule" value="1"><span class="radio__text">08:00 - 09:30</span><br>
+          <input type="radio" name="studentSchedule" value="2"><span class="radio__text">12:00 - 13:30</span><br>
+          <input type="radio" name="studentSchedule" value="3"><span class="radio__text">17:00 - 18:30 </span>
+        </form> 
+    </div>
+
+    <div>
+        <button (click)="save()">Save</button>
+        <button class="button-default">Reset</button>
+    </div>
+  </div>
+</div>
