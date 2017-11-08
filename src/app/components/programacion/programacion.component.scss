@@ -69,10 +69,13 @@
     }
 }
 .filter-box__item.checkbox-item{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: none;
+    @include bp(lg){
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 }
 .input-text{
     border-bottom: 1px solid $color-white;
