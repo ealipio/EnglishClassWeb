@@ -94,6 +94,10 @@
     }
 }
 
+.programation__card--unassigned {
+    background-color: $color-alt-red;
+}
+
 .programation__card-content {
     display: flex;
     justify-content: space-between;

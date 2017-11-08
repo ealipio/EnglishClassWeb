@@ -4,7 +4,7 @@
     <app-message-box [message]="message" [type]="messageType" [showMessage]="showMessage"></app-message-box>
   </div>
   <div class="teacher-pre-inscription__content" *ngIf="!showMessage">
-    <div>
+    <div class="teacher-pre-inscription__information">
       <div class="teacher-pre-inscription__schedule">
         <b>Select Schedule:</b>
         <div>
@@ -39,8 +39,21 @@
         </div>
       </div>
 
-      <div>
+      <div class="teacher-pre-inscription__level">
         <b>Select your level preferences</b>
+        <div class="teacher-pre-inscription__dropdown">
+          <span (click)="toogleMenuLevel()">name</span>
+          <span class="teacher-pre-inscription__triangule"></span>          
+        </div>
+        <ul class="teacher-pre-inscription__list" *ngIf="isMenuListVisible">
+          <li value="2">2</li>
+          <li value="3A">3A</li>
+          <li value="3B">3B</li>
+          <li value="4A">4A</li>
+          <li value="4B">4B</li>
+          <li value="5">5</li>
+          <li value="6">6</li>
+        </ul>
       </div>
 
     </div>

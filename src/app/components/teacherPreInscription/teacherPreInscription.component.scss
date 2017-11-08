@@ -46,6 +46,52 @@
     }
 }
 
+.teacher-pre-inscription__information {
+    display: flex;
+    flex-direction: column;
+    @include bp(md){
+        flex-direction: row;
+    }
+}
+
 .teacher-pre-inscription__schedule {
     margin-bottom: 1rem;
+    flex: 1 1 auto;
+}
+
+.teacher-pre-inscription__level {
+    flex: 1 1 auto;
+}
+
+.teacher-pre-inscription__dropdown {
+    background-color: $color-blue;
+    color: $color-white;
+    border-radius: 0.5rem;
+    position: relative;
+    line-height: 1.5rem;
+    width: 6rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.teacher-pre-inscription__triangule {    
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;    
+    border-top: 12px solid $color-white;    
+    position: absolute;
+    right: 1rem;
+    top: 0.7rem;
+}
+
+.teacher-pre-inscription__list {
+    border: 1px solid $color-blue;
+    color: $color-blue;
+    border-radius: 0.5rem;
+    position: relative;
+    line-height: 1.5rem;
+    width: 6rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
 }

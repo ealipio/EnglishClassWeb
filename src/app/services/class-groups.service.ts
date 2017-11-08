@@ -30,4 +30,13 @@ constructor(private http: Http) { }
             });
     }
 
+    public postGenerateGroups() {
+        return  this.http.post(`${this.API_ENDPOINT}/course/generategroups`,{
+            "IdPreInscription": "1"
+            })            
+            .map( result => {
+                 return result.ok;
+            });
+    }
+
 }
