@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopmenuComponent } from './layout/topmenu/topmenu.component';
+import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components//home/home.component';
 import { ProgramacionComponent } from './components//programacion/programacion.component';
 import { ProgramationDetailComponent } from './components/programationDetail/programationDetail.component';
@@ -22,6 +23,7 @@ import { AuthorizationService } from './shared/services/authorization.service';
   declarations: [
     AppComponent,
     TopmenuComponent,
+    LoginComponent,
     HomeComponent,
     ProgramacionComponent,
     ProgramationDetailComponent,
