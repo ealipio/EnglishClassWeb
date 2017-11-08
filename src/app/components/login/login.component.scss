@@ -1,0 +1,53 @@
+@import '../../styles/helpers/variables.scss';
+@import '../../styles/helpers/mixins.scss';
+
+.login-container{
+    height: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form{
+    width: 400px;
+    height: 15rem;
+    padding: 2rem;
+    padding-top: 4rem;
+    color: $color-gray;
+    font-size: 1rem;
+    /*border: 1px solid #FF7F00;
+    border-radius: .5rem;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-item{
+    height: 20%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+
+.login-form__button{
+    width:150px;
+    margin:auto;
+}
+
+.login-item__input{
+    display: inline-block;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 5px;
+    line-height: 1.5rem;
+    border-bottom: 2px solid $color-gray;
+    &:focus{
+        outline: none;
+        color: $color-orange;
+        border-bottom: 2px solid $color-orange;
+        & + label{
+            color: $color-orange;
+        }
+    }
+}

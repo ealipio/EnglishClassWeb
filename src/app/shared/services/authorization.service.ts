@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthorizationService {
@@ -22,14 +23,32 @@ export class AuthorizationService {
       type: 3
     }];
 
-  constructor() { }
+  constructor(private router: Router) {}
 
   public login(username: string, password: string) {
+    let validUser = false;
     this.users.forEach( user => {
       if (user.username === username) {
-
+        localStorage.setItem('user',
+          `{"name": "${user.name}","username": "${user.username}","password": "${user.password}","type": "${user.type}"}`);
+        this.router.navigate((['home']));
+        validUser = true;
       }
     });
+    return validUser;
   }
 
+  public isUserLogged() {
+    return localStorage.getItem('user') ? true : false;
+  }
+
+  public logout() {
+    localStorage.removeItem('user');
+    this.router.navigate((['login']));
+  }
+
+  public getUserLogged() {
+    return JSON.parse(localStorage.getItem('user'));
+  }
 }
+
