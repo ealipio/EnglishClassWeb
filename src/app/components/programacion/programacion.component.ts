@@ -37,9 +37,6 @@ export class ProgramacionComponent extends MessageBox implements OnInit {
         this.messageType = 'error';
         this.showMessage = true;
     });
-
-
-
   }
 
   private getGroups() {

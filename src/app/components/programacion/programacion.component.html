@@ -8,25 +8,41 @@
 
   <div *ngIf="isCardsVisible" class="programation">
     <div class="programation__filters filter-box">
-        <div class="filter-box__header filter-box__item">
+        <div class="filter-box__header">
           <b>Filters</b>
-          <hr>
         </div>
+        <div class="filter-box__item"><hr></div>
         <div class="filter-box__item">
           <label>Teacher:</label>
-          <input type="text" class="input-text">
+          <select class="select">
+              <option value="0">Select one</option>
+              <option value="1">Robert</option>
+              <option value="2">Giomara</option>
+              <option value="2">Rosario</option>
+            </select>
         </div>
         <div class="filter-box__item">
           <label>Class level:</label>
-          <input type="text" class="input-text">
+          <select class="select">
+              <option value="0">Select one</option>
+              <option value="1">3A</option>
+              <option value="2">3B</option>
+              <option value="2">4A</option>
+              <option value="2">4B</option>
+              <option value="2">5A</option>
+              <option value="2">5B</option>
+            </select>
         </div>
         <div class="filter-box__item">
-          <label>Class day:</label>
+          <label>Schedule:</label>
           <select class="select">
             <option value="0">Select one</option>
             <option value="1">Monday - Wednesday</option>
             <option value="2">Tuesday - Thursday</option>
           </select>
+        </div>
+        <div class="filter-box__item checkbox-item">
+            <input type="checkbox" class="checkbox"/><span>Only Unassigned</span>
         </div>
         <div class="filter-box__buttons filter-box__item">
           <button>Apply</button>

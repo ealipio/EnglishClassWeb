@@ -43,9 +43,10 @@
     color: $color-white;
     background: $color-blue;
     text-align: left;
-    padding: 2rem;
+    padding: 1rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
     @include bp(lg){
+        padding: 2rem;
         border-radius: 0.5rem;
         position: fixed;
         left: 1rem;
@@ -56,16 +57,22 @@
 }
 
 .programation__filters.filter-box {
-    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
-.filter-box__header {
-    margin-bottom: 1rem;
-}
 .filter-box__item {
-    margin-bottom: 1rem;
+    display: none;
+    @include bp(lg){
+        display: block;
+        margin-bottom: 1rem;
+    }
+}
+.filter-box__item.checkbox-item{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .input-text{
     border-bottom: 1px solid $color-white;
@@ -91,11 +98,15 @@ option{
     color: $color-black;
 }
 .filter-box__buttons{
-    margin-top: auto;
-    margin-bottom: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: none;
+    @include bp(lg){
+        padding-top: 2rem;
+        margin-top: auto;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 button{
     width: 100px;
