@@ -1,5 +1,5 @@
-<div class="teacher-pre-inscription__header">Welcome <b>Robert</b>. <br/>Please select the schedules in which you can teach english in our offices.</div>
-<div class="teacher-pre-inscription__body">
+<div class="teacher-pre-inscription__header" (click)="hideMenuLevel()">Welcome <b>Robert</b>. <br/>Please select the schedules in which you can teach english in our offices.</div>
+<div class="teacher-pre-inscription__body" (click)="hideMenuLevel()">
   <div *ngIf="showMessage" class="teacher-pre-inscription__alert">
     <app-message-box [message]="message" [type]="messageType" [showMessage]="showMessage"></app-message-box>
   </div>
@@ -7,32 +7,32 @@
     <div class="teacher-pre-inscription__information">
       <div class="teacher-pre-inscription__schedule">
         <b>Select Schedule:</b>
-        <div>
+        <div class="teacher-pre-inscription__schedule-item">
             <input type="checkbox">
             <span>Monday - Wednesday</span>
             <span>08:00 - 09:30</span>            
         </div>
-        <div>
+        <div class="teacher-pre-inscription__schedule-item">
             <input type="checkbox">
             <span>Monday - Wednesday</span>
             <span>12:00 - 13:30</span>            
         </div>
-        <div>            
+        <div class="teacher-pre-inscription__schedule-item">            
             <input type="checkbox">
             <span>Monday - Wednesday</span>
             <span>17:00 - 18:30</span>            
         </div>
-        <div>
+        <div class="teacher-pre-inscription__schedule-item">
             <input type="checkbox">
             <span>Tuesday - Thursday</span>
             <span>08:00 - 09:30</span>            
         </div>
-        <div>
+        <div class="teacher-pre-inscription__schedule-item">
             <input type="checkbox">
             <span>Tuesday - Thursday</span>
             <span>12:00 - 13:30</span>            
         </div>
-        <div>
+        <div class="teacher-pre-inscription__schedule-item">
             <input type="checkbox">
             <span>Tuesday - Thursday</span>
             <span>17:00 - 18:30</span>            
@@ -41,19 +41,30 @@
 
       <div class="teacher-pre-inscription__level">
         <b>Select your level preferences</b>
-        <div class="teacher-pre-inscription__dropdown">
-          <span (click)="toogleMenuLevel()">name</span>
+        <div class="teacher-pre-inscription__dropdown" (click)="showMenuLevel();$event.stopPropagation();">
+          <span>Level</span>
           <span class="teacher-pre-inscription__triangule"></span>          
         </div>
-        <ul class="teacher-pre-inscription__list" *ngIf="isMenuListVisible">
-          <li value="2">2</li>
-          <li value="3A">3A</li>
-          <li value="3B">3B</li>
-          <li value="4A">4A</li>
-          <li value="4B">4B</li>
-          <li value="5">5</li>
-          <li value="6">6</li>
-        </ul>
+
+        <div class="teacher-pre-inscription__list" *ngIf="isMenuListVisible" (click)="$event.stopPropagation();">
+            <div><input type="checkbox"><span class="teacher-pre-inscription__item">2</span></div>
+            <div><input type="checkbox"><span class="teacher-pre-inscription__item">3A</span></div>
+            <div><input type="checkbox"><span class="teacher-pre-inscription__item">3B</span></div>
+            <div><input type="checkbox"><span class="teacher-pre-inscription__item">4A</span></div>
+            <div><input type="checkbox"><span class="teacher-pre-inscription__item">4B</span></div>
+            <div><input type="checkbox"><span class="teacher-pre-inscription__item">5</span></div>
+            <div><input type="checkbox"><span class="teacher-pre-inscription__item">6</span></div>
+        </div>
+
+        <!-- <ul class="teacher-pre-inscription__list" *ngIf="isMenuListVisible">
+          <li class="teacher-pre-inscription__item" value="2">2</li>
+          <li class="teacher-pre-inscription__item" value="3A">3A</li>
+          <li class="teacher-pre-inscription__item" value="3B">3B</li>
+          <li class="teacher-pre-inscription__item" value="4A">4A</li>
+          <li class="teacher-pre-inscription__item" value="4B">4B</li>
+          <li class="teacher-pre-inscription__item" value="5">5</li>
+          <li class="teacher-pre-inscription__item" value="6">6</li>
+        </ul> -->
       </div>
 
     </div>

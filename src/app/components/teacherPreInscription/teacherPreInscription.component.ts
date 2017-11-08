@@ -17,9 +17,12 @@ export class TeacherPreInscriptionComponent implements OnInit {
   ngOnInit() {
   }
 
-  toogleMenuLevel(){
-    debugger;
+  showMenuLevel(){
     this.isMenuListVisible = true;
+  }
+  
+  hideMenuLevel() {
+    this.isMenuListVisible = false;
   }
 
   save(){

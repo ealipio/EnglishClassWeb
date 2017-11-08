@@ -59,6 +59,10 @@
     flex: 1 1 auto;
 }
 
+.teacher-pre-inscription__schedule-item {
+    margin: 1rem 0.5rem;
+}
+
 .teacher-pre-inscription__level {
     flex: 1 1 auto;
 }
@@ -69,17 +73,18 @@
     border-radius: 0.5rem;
     position: relative;
     line-height: 1.5rem;
-    width: 6rem;
+    width: 5rem;
     padding: 0.25rem 0.5rem;
     cursor: pointer;
+    margin-top: 1rem;
 }
 
 .teacher-pre-inscription__triangule {    
-    width: 0; 
-    height: 0; 
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;    
-    border-top: 12px solid $color-white;    
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid $color-white;
     position: absolute;
     right: 1rem;
     top: 0.7rem;
@@ -91,7 +96,12 @@
     border-radius: 0.5rem;
     position: relative;
     line-height: 1.5rem;
-    width: 6rem;
+    width: 5rem;
     padding: 0.25rem 0.5rem;
     cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.teacher-pre-inscription__item {
+    margin-left: 1rem;
 }
