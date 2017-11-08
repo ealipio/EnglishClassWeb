@@ -42,6 +42,18 @@ button {
         background-color: $color-alt-orange;
     }
 }
+.input-text{
+    display: inline-block;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 5px;
+}
+.select{
+    display: inline-block;
+    border: none;
+    border-radius: 6px;    
+    padding: 10px;
+}
 .button-default{
     background-color: $color-lightgray;
     color: $color-black;

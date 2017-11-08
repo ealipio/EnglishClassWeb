@@ -5,7 +5,7 @@
     <ul class="menu__list--desktop">
       <li><a class="menu__item" routerLink="/home">Home</a></li>
       <ng-container *ngIf="isAdmin">
-        <li><a class="menu__item" routerLink="/schedule">Programation</a></li>
+        <li><a class="menu__item" routerLink="/schedule">Schedule</a></li>
         <li><a class="menu__item" routerLink="/assistance">Assistance</a></li>
         <li><a class="menu__item" routerLink="/history">History</a></li>
       </ng-container>
@@ -20,7 +20,7 @@
     <ul class="menu__list" [@navbarState]="state">
       <li (click)="navigate('/home')"><a>Home</a></li>
       <ng-container *ngIf="isAdmin">
-        <li (click)="navigate('/schedule')"><a>Programation</a></li>
+        <li (click)="navigate('/schedule')"><a>Schedule</a></li>
         <li (click)="navigate('/assistance')"><a >Assistance</a></li>
         <li (click)="navigate('/history')"><a >History</a></li>
       </ng-container>

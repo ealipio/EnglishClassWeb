@@ -36,10 +36,6 @@
 }
 
 .login-item__input{
-    display: inline-block;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 5px;
     line-height: 1.5rem;
     border-bottom: 2px solid $color-gray;
     &:focus{
