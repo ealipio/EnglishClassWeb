@@ -13,6 +13,7 @@ export class ProgramacionComponent extends MessageBox implements OnInit {
   isSpinnerVisible = false;
   isCardsVisible = true;
   groups = null;
+  areGroupsGenerate = false;
   constructor(private classGroupsService: ClassGroupsService) {
     super();
     this.getGroups();
@@ -25,10 +26,20 @@ export class ProgramacionComponent extends MessageBox implements OnInit {
   private generateCards() {
     var vm = this;
     this.isSpinnerVisible = true;
-    this.buttonText = 'Creating Groups';   
-    setTimeout(function(){ 
-      vm.isCardsVisible = true;
-    }, 800, vm);    
+    this.buttonText = 'Creating Groups';
+    this.classGroupsService.postGenerateGroups().subscribe(
+      result => {
+        this.areGroupsGenerate = result;
+        vm.isCardsVisible = true;
+        this.getGroups();
+      }, error => {
+        this.message = `Error: ${error.statusText}`;
+        this.messageType = 'error';
+        this.showMessage = true;
+    });
+
+
+
   }
 
   private getGroups() {

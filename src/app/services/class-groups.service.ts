@@ -10,7 +10,7 @@ API_ENDPOINT = 'http://englishcourseapi.azurewebsites.net/api';
 
 constructor(private http: Http) { }
     public getGroups() {
-        return  this.http.get(`${this.API_ENDPOINT}/course/groupsummadfgry`)
+        return  this.http.get(`${this.API_ENDPOINT}/course/groupsummary`)
             .map( result => {
                 return result.json().groups;
             });
@@ -27,6 +27,15 @@ constructor(private http: Http) { }
         return  this.http.get(`${this.API_ENDPOINT}/course/runstatus`)
             .map( result => {
                  return result.json().status;
+            });
+    }
+
+    public postGenerateGroups() {
+        return  this.http.post(`${this.API_ENDPOINT}/course/generategroups`,{
+            "IdPreInscription": "1"
+            })            
+            .map( result => {
+                 return result.ok;
             });
     }
 

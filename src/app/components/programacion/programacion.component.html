@@ -13,7 +13,7 @@
       <app-message-box [message]="message" [type]="messageType" [showMessage]="showMessage"></app-message-box>
       <ng-container *ngFor="let group of groups">
         <a routerLink="/schedule/{{group.idGroup}}">
-        <div class="programation__card">
+        <div class="programation__card" [ngClass]="{'programation__card--unassigned': group.teacherName === 'Unassigned'}">
           <div class="programation__card-content">
             <div class="programation__card-item">
                 <span class="programation__card-name"><b>{{group.levelName}} - {{group.teacherName}} {{group.teacherLastName}}</b></span>
