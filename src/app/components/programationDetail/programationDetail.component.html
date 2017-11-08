@@ -6,11 +6,11 @@
         <b><span>Teacher: {{groupDetail.teacherName}} {{groupDetail.teacherLastName}} | Level: {{groupDetail.levelName}}</span></b>
         <span class="schedule__detail">{{groupDetail.scheduleDescription}} | {{groupDetail.formattedStartHour}} - {{groupDetail.formattedEndHour}}</span>
       </div>
-      
+
       <span class="schedule__users"><b>{{groupDetail.students}}/10<i class="fa fa-user schedule__availability"></i></b></span>
-      
+
     </div>
-    <div class="schedule__body">     
+    <div class="schedule__body">
 
       <div><b>Students:</b></div>
       <ng-container *ngFor="let student of studentsList">
@@ -26,7 +26,7 @@
     </div>
     <div class="schedule__footer">
         <button>Save</button>
-        <button class="button-default" routerLink="/programacion">Back</button>
+        <button class="button-default" routerLink="/schedule">Back</button>
     </div>
   </div>
 </div>

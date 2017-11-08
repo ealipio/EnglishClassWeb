@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeacherPreInscriptionComponent implements OnInit {
 
+  message: string = 'Your availability has been successfully sent to Human Resources Department. Thank you';
+  messageType: string = 'success';
+  showMessage: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  save(){
+    this.showMessage = true;
   }
 
 }

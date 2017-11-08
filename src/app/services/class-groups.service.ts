@@ -10,7 +10,7 @@ API_ENDPOINT = 'http://englishcourseapi.azurewebsites.net/api';
 
 constructor(private http: Http) { }
     public getGroups() {
-        return  this.http.get(`${this.API_ENDPOINT}/course/groupsummary`)
+        return  this.http.get(`${this.API_ENDPOINT}/course/groupsummadfgry`)
             .map( result => {
                 return result.json().groups;
             });

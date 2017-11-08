@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class StudentPreInscriptionComponent implements OnInit {
 
-  message: string = 'The Pre - Inscription was succesfully';
+  message: string = 'Your availability has been successfully sent to Human Resources Department. Thank you';
   messageType: string = 'success';
   showMessage: boolean = false;
 

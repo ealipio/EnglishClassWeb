@@ -10,6 +10,7 @@
 
 .student-pre-inscription__header {
     color: $color-white;
+    line-height: 1.5rem;
     background: $color-blue;
     position: relative;
     z-index: 10;
@@ -20,10 +21,13 @@
 
 .student-pre-inscription__body {
     display: flex;
-    height: calc(100% - 54px);
+    height: calc(100% - 105px); 
     background: url(/assets/imagenes/background-cars.jpeg) no-repeat center center fixed;
     background-size: cover;
     position: relative;
+    @include bp(md) {
+        height: calc(100% - 80px);
+    }
 }
 
 .student-pre-inscription__content {
@@ -91,7 +95,7 @@
 .input__item {
     padding: 15px 10px 5px 0px;
     display: block;
-    width: 330px;
+    width: 100%;
     border: none;
     border-bottom: 1px solid #757575;
     outline: none;

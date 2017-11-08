@@ -1,3 +1,47 @@
-<p>
-  teacherPreInscription works!
-</p>
+<div class="teacher-pre-inscription__header">Welcome <b>Robert</b>. <br/>Please select the schedules in which you can teach english in our offices.</div>
+<div class="teacher-pre-inscription__body">
+  <div *ngIf="showMessage" class="teacher-pre-inscription__alert">
+    <app-message-box [message]="message" [type]="messageType" [showMessage]="showMessage"></app-message-box>
+  </div>
+  <div class="teacher-pre-inscription__content" *ngIf="!showMessage">
+    <div>
+      <div class="teacher-pre-inscription__schedule">
+        <div>
+            <input type="checkbox">
+            <span>Monday - Wednesday</span>
+            <span>08:00 - 09:30</span>            
+        </div>
+        <div>
+            <input type="checkbox">
+            <span>Monday - Wednesday</span>
+            <span>12:00 - 13:30</span>            
+        </div>
+        <div>            
+            <input type="checkbox">
+            <span>Monday - Wednesday</span>
+            <span>17:00 - 18:30</span>            
+        </div>
+        <div>
+            <input type="checkbox">
+            <span>Tuesday - Thursday</span>
+            <span>08:00 - 09:30</span>            
+        </div>
+        <div>
+            <input type="checkbox">
+            <span>Tuesday - Thursday</span>
+            <span>12:00 - 13:30</span>            
+        </div>
+        <div>
+            <input type="checkbox">
+            <span>Tuesday - Thursday</span>
+            <span>17:00 - 18:30</span>            
+        </div>
+      </div>
+
+    </div>
+    <div>
+        <button (click)="save()">Save</button>
+        <button class="button-default">Reset</button>
+    </div>
+  </div>
+</div>
