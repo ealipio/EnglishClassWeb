@@ -1,5 +1,5 @@
 <div>
-  <div *ngIf="!isCardsVisible">
+  <div *ngIf="isCardsVisible === false">
       <div class="programation__year">English Classes 2018</div>
       <button (click)="generateCards()" class="programation__groups">{{buttonText}}
           <i *ngIf="isSpinnerVisible" class="fa fa-spinner fa-spin"></i>

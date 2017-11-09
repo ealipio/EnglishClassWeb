@@ -11,26 +11,26 @@ import { ClassGroupsService } from '../../services/class-groups.service';
 export class ProgramacionComponent extends MessageBox implements OnInit {
   buttonText = 'Generate Groups';
   isSpinnerVisible = false;
-  isCardsVisible = true;
+  isCardsVisible :boolean;
   groups = null;
   areGroupsGenerate = false;
   constructor(private classGroupsService: ClassGroupsService) {
     super();
-    this.getGroups();
     this.getGroupStatus();
+    this.getGroups();
+    
   }
 
   ngOnInit() {
   }
 
   private generateCards() {
-    var vm = this;
     this.isSpinnerVisible = true;
     this.buttonText = 'Creating Groups';
     this.classGroupsService.postGenerateGroups().subscribe(
       result => {
         this.areGroupsGenerate = result;
-        vm.isCardsVisible = true;
+        this.isCardsVisible = true;
         this.getGroups();
       }, error => {
         this.message = `Error: ${error.statusText}`;

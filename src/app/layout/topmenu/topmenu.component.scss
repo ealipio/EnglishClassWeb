@@ -25,7 +25,9 @@
     z-index: 90;
     top: 4.3rem;
     position: fixed;
-    width: 92%;
+    //width: 92%;
+    left: 0;
+    right: 0;
     @include bp(md){
         display: none;
     }    

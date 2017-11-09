@@ -17,7 +17,7 @@ import { Constants } from '../../services/constants';
       })),
       state('visible',   style({
         visibility: 'visible',
-        height: '8rem',
+        height: '10rem',
         overflow: 'hidden'
       })),
       transition('hidden <=> visible', animate('450ms ease-in') )
