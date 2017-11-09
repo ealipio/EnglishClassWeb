@@ -72,5 +72,6 @@ export class TopmenuComponent implements OnInit, DoCheck {
   logout() {
     this.authService.logout();
     this.userLogged = this.authService.isUserLogged();
+    this.state = 'hidden';
   }
 }

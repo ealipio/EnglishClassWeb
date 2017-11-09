@@ -1,7 +1,9 @@
 
 
 .topmenu-container{
-    height:69px;
+    height: 69px;
+    position: relative;
+    z-index: 50;
 }
 
 .main-container{

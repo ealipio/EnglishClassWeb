@@ -25,12 +25,12 @@
         <li (click)="navigate('/history')"><a >History</a></li>
       </ng-container>
       <ng-container *ngIf="isStudent">
-        <li><a class="menu__item" routerLink="/pre-inscription/student">Pre-Inscription</a></li>
+        <li (click)="navigate('/pre-inscription/student')"><a>Pre-Inscription</a></li>
       </ng-container>
       <ng-container *ngIf="isTeacher">
-        <li><a class="menu__item" routerLink="/pre-inscription/teacher">Pre-Inscription</a></li>
+        <li (click)="navigate('/pre-inscription/teacher')"><a>Pre-Inscription</a></li>
       </ng-container>
-      <li><a class="menu__item" (click)="logout()">Logout</a></li>
+      <li (click)="logout()"><a>Logout</a></li>
     </ul>
   </ng-container>
 </div>

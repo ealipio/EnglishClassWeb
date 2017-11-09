@@ -14,13 +14,10 @@
 
 .teacher-pre-inscription__body {
     display: flex;
-    height: calc(100% - 105px);    
+    height: calc(100% - 80px);    
     background: url(/assets/imagenes/background-cars.jpeg) no-repeat center center fixed;
     background-size: cover;
     position: relative;
-    @include bp(md) {
-        height: calc(100% - 80px);
-    }
 }
 
 .teacher-pre-inscription__alert {
@@ -36,12 +33,13 @@
     border-radius: 0.5rem;
     padding: 1rem;
     position: absolute;
-    top: 2rem;
+    top: 1rem;
     left: 0;
     right: 0;
     box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
     margin: 0 0.25rem;
     @include bp(md){
+        top: 2rem;
         margin: 0 auto;
     }
 }
@@ -65,6 +63,10 @@
 
 .teacher-pre-inscription__level {
     flex: 1 1 auto;
+    margin-bottom: 1rem;
+    @include bp(md) {
+        margin-bottom: 0rem;
+    }
 }
 
 .teacher-pre-inscription__dropdown {
