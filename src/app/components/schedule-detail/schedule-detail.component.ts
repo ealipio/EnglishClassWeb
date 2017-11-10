@@ -1,31 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageBox } from '../../shared/models/message-box';
-import { ClassGroupsService } from '../../services/class-groups.service';
+import { ScheduleService } from '../../services/schedule.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-programationDetail',
-  templateUrl: './programationDetail.component.html',
-  styleUrls: ['./programationDetail.component.scss']
+  selector: 'app-schedule-detail',
+  templateUrl: './schedule-detail.component.html',
+  styleUrls: ['./schedule-detail.component.scss']
 })
 
-export class ProgramationDetailComponent extends MessageBox implements OnInit {
+export class ScheduleDetailComponent extends MessageBox implements OnInit {
   groupId: number;
   groupDetail = null;
   studentsList = null;
   showDetail: boolean;
-  constructor(private route: ActivatedRoute, private classGroupsService: ClassGroupsService) {
+  constructor(private route: ActivatedRoute, private scheduleService: ScheduleService) {
     super();
     this.showDetail = false;
     this.groupId = this.route.snapshot.params['id'];
     this.getGroupById(this.groupId);
   }
-
   ngOnInit() {
   }
-
   private getGroupById(groupId: number) {
-    this.classGroupsService.getGroupDetails(groupId).subscribe(
+    this.scheduleService.getScheduleDetails(groupId).subscribe(
       result => {
         this.groupDetail = result.groupSummary;
         this.studentsList = result.studentGroup;

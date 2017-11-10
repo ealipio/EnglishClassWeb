@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -10,11 +9,11 @@ import { AppComponent } from './app.component';
 import { TopmenuComponent } from './layout/topmenu/topmenu.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components//home/home.component';
-import { ProgramacionComponent } from './components//programacion/programacion.component';
-import { ProgramationDetailComponent } from './components/programationDetail/programationDetail.component';
-import { StudentPreInscriptionComponent } from './components/studentPreInscription/studentPreInscription.component';
-import { TeacherPreInscriptionComponent } from './components/teacherPreInscription/teacherPreInscription.component';
-import { ClassGroupsService } from './services/class-groups.service';
+import { ScheduleComponent } from './components//schedule/schedule.component';
+import { ScheduleDetailComponent } from './components/schedule-detail/schedule-detail.component';
+import { StudentPreInscriptionComponent } from './components/student-preinscription/student-preinscription.component';
+import { TeacherPreInscriptionComponent } from './components/teacher-preinscription/teacher-preinscription.component';
+import { ScheduleService } from './services/schedule.service';
 import { MessageBoxComponent } from './shared/components/message-box/message-box.component';
 import { MessageBoxTypeDirective } from './shared/directives/message-box-type.directive';
 import { AuthorizationService } from './shared/services/authorization.service';
@@ -25,8 +24,8 @@ import { AuthorizationService } from './shared/services/authorization.service';
     TopmenuComponent,
     LoginComponent,
     HomeComponent,
-    ProgramacionComponent,
-    ProgramationDetailComponent,
+    ScheduleComponent,
+    ScheduleDetailComponent,
     StudentPreInscriptionComponent,
     TeacherPreInscriptionComponent,
     MessageBoxComponent,
@@ -39,7 +38,7 @@ import { AuthorizationService } from './shared/services/authorization.service';
     BrowserAnimationsModule,
     FormsModule
   ],
-  providers: [ClassGroupsService, AuthorizationService],
+  providers: [ScheduleService, AuthorizationService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

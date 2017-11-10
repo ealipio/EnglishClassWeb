@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageBox } from '../../shared/models/message-box';
-import { ClassGroupsService } from '../../services/class-groups.service';
+import { ScheduleService } from '../../services/schedule.service';
 
 @Component({
-  selector: 'app-programacion',
-  templateUrl: './programacion.component.html',
-  styleUrls: ['./programacion.component.scss']
+  selector: 'app-schedule',
+  templateUrl: './schedule.component.html',
+  styleUrls: ['./schedule.component.scss']
 })
 
-export class ProgramacionComponent extends MessageBox implements OnInit {
+export class ScheduleComponent extends MessageBox implements OnInit {
   buttonText = 'Generate Groups';
   isSpinnerVisible = false;
   isCardsVisible :boolean;
   groups = null;
   areGroupsGenerate = false;
-  constructor(private classGroupsService: ClassGroupsService) {
+  constructor(private scheduleService: ScheduleService) {
     super();
-    this.getGroupStatus();
-    this.getGroups();
-    
+    this.getScheduleStatus();
+    this.getSchedules();
+
   }
 
   ngOnInit() {
@@ -27,11 +27,11 @@ export class ProgramacionComponent extends MessageBox implements OnInit {
   private generateCards() {
     this.isSpinnerVisible = true;
     this.buttonText = 'Creating Groups';
-    this.classGroupsService.postGenerateGroups().subscribe(
+    this.scheduleService.postGenerateSchedules().subscribe(
       result => {
         this.areGroupsGenerate = result;
         this.isCardsVisible = true;
-        this.getGroups();
+        this.getSchedules();
       }, error => {
         this.message = `Error: ${error.statusText}`;
         this.messageType = 'error';
@@ -39,8 +39,8 @@ export class ProgramacionComponent extends MessageBox implements OnInit {
     });
   }
 
-  private getGroups() {
-    this.classGroupsService.getGroups().subscribe(
+  private getSchedules() {
+    this.scheduleService.getSchedules().subscribe(
       result => {
         this.groups = result;
       }, error => {
@@ -50,8 +50,8 @@ export class ProgramacionComponent extends MessageBox implements OnInit {
       });
   }
 
-  private getGroupStatus (){
-    this.classGroupsService.getGroupStatus().subscribe(
+  private getScheduleStatus (){
+    this.scheduleService.getScheduleStatus().subscribe(
       result => {
         this.isCardsVisible = result;
       }, error => {

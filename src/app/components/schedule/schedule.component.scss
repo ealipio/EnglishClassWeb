@@ -1,15 +1,15 @@
 @import '../../styles/helpers/variables.scss';
 @import '../../styles/helpers/mixins.scss';
 
-.programation {
+.schedule {
    display: flex;
    flex-flow: column;
-   height: 100%; 
+   height: 100%;
    background: url(/assets/imagenes/background-cars.jpeg) no-repeat center center fixed;
    background-size: cover;
    min-height: 37.5rem;
-   @include bp(md){    
-    min-height: 60rem;   
+   @include bp(md){
+    min-height: 60rem;
    }
    @include bp(lg){
     flex-flow: row;
@@ -25,21 +25,21 @@
    }
 }
 
-.programation__year {
+.schedule__year {
     padding: 1rem;
     color: $color-white;
     background: $color-blue;
     font-weight: bold;
 }
 
-.programation__groups {
+.schedule__groups {
     position: absolute;
     top: 50%;
     right: 50%;
     transform: translate(50%,-50%);
 }
 
-.programation__filters {
+.schedule__filters {
     color: $color-white;
     background: $color-blue;
     text-align: left;
@@ -56,7 +56,7 @@
     }
 }
 
-.programation__filters.filter-box {
+.schedule__filters.filter-box {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -115,14 +115,14 @@ option{
     width: 100px;
 }
 
-.programation__list {
+.schedule__list {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-top: 1rem;
 }
 
-.programation__card {
+.schedule__card {
     display: flex;
     flex-direction: row;
     width: 19.5rem;
@@ -138,10 +138,10 @@ option{
     cursor: pointer;
     &:hover {
         background-color: $color-alt-orange;
-        .programation__card__availability {
+        .schedule__card__availability {
             color: $color-blue;
         }
-    }    
+    }
     @include bp(md) {
         width: 40rem;
         margin-bottom: 1rem;
@@ -154,11 +154,11 @@ option{
     }
 }
 
-.programation__card--unassigned {
+.schedule__card--unassigned {
     background-color: $color-alt-red;
 }
 
-.programation__card-content {
+.schedule__card-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -166,7 +166,7 @@ option{
     margin-right: 1rem;
 }
 
-.programation__card-item {
+.schedule__card-item {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -182,11 +182,11 @@ option{
     }
 }
 
-.programation__card-user {
+.schedule__card-user {
     margin-left: 0.5rem;
 }
 
-.programation__card-item--right {
+.schedule__card-item--right {
     align-items: flex-end;
     @include bp(md){
         align-items: center;
@@ -194,18 +194,18 @@ option{
     }
 }
 
-.programation__card__availability {
+.schedule__card__availability {
     color: $color-orange;
 }
 
-.programation__card-name {
+.schedule__card-name {
     width: 100%;
     @include bp(md){
         width: 40%;
     }
 }
 
-.programation__card-schedule {
+.schedule__card-schedule {
     width: 100%;
     text-transform: capitalize;
     @include bp(md){
@@ -216,7 +216,7 @@ option{
     }
 }
 
-.programation__card-availability {
+.schedule__card-availability {
     width: 100%;
     @include bp(md){
         width: 14%;

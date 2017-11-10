@@ -3,37 +3,37 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class ClassGroupsService {
+export class ScheduleService {
 
 
 API_ENDPOINT = 'http://englishcourseapi.azurewebsites.net/api';
 
 constructor(private http: Http) { }
-    public getGroups() {
+    public getSchedules() {
         return  this.http.get(`${this.API_ENDPOINT}/course/groupsummary`)
             .map( result => {
                 return result.json().groups;
             });
     }
 
-    public getGroupDetails(groupId: number) {
+    public getScheduleDetails(groupId: number) {
         return  this.http.get(`${this.API_ENDPOINT}/course/studentsbygroup?groupId=${groupId}`)
             .map( result => {
                 return result.json();
             });
     }
 
-    public getGroupStatus() {
+    public getScheduleStatus() {
         return  this.http.get(`${this.API_ENDPOINT}/course/runstatus`)
             .map( result => {
                  return result.json().status;
             });
     }
 
-    public postGenerateGroups() {
+    public postGenerateSchedules() {
         return  this.http.post(`${this.API_ENDPOINT}/course/generategroups`,{
             "IdPreInscription": "1"
-            })            
+            })
             .map( result => {
                  return result.ok;
             });

@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { ClassGroupsService } from './class-groups.service';
+import { ScheduleService } from './schedule.service';
 
 describe('Service: ClassGroups', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ClassGroupsService]
+      providers: [ScheduleService]
     });
   });
 
-  it('should ...', inject([ClassGroupsService], (service: ClassGroupsService) => {
+  it('should ...', inject([ScheduleService], (service: ScheduleService) => {
     expect(service).toBeTruthy();
   }));
 });

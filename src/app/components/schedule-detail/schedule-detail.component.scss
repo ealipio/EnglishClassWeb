@@ -1,7 +1,7 @@
 @import '../../styles/helpers/variables.scss';
 @import '../../styles/helpers/mixins.scss';
 
-.schedule__container {
+.schedule-detail__container {
     background: url(/assets/imagenes/background-cars.jpeg) no-repeat center center fixed;
     background-size: cover;
     min-height: 38rem;
@@ -19,7 +19,7 @@
     }
 }
 
-.schedule {    
+.schedule-detail {
     border: 2px solid $color-blue;
     margin: 1rem;
     color: $color-white;
@@ -29,10 +29,10 @@
     flex-direction: column;
     border-radius: 0.5rem;
     position: relative;
-    top: 3rem;   
+    top: 3rem;
 }
 
-.schedule__header {
+.schedule-detail__header {
     display: flex;
     justify-content: space-between;
     background-color: $color-blue;
@@ -40,55 +40,55 @@
     align-items: baseline;
 }
 
-.schedule__body {
+.schedule-detail__body {
     background: $color-white;
     color:$color-blue;
     padding: 1rem;
 }
 
-.schedule__footer {
+.schedule-detail__footer {
     background: $color-blue;
     padding: 0.75rem;
 
 }
 
-.schedule__information {
+.schedule-detail__information {
     display: flex;
     flex-direction: column;
     line-height: 2rem;
 }
 
-.schedule__detail {
+.schedule-detail__detail {
     text-transform: capitalize;
 }
 
-.schedule__users {
+.schedule-detail__users {
     color: $color-orange;
 }
 
-.schedule__availability {
-    margin-left: 0.5rem;  
+.schedule-detail__availability {
+    margin-left: 0.5rem;
 }
 
-.schedule__student {
+.schedule-detail__student {
     display: flex;
     justify-content: space-between;
     line-height: 2rem;
     margin: 0.5rem 0 0 1rem;
 }
 
-.schedule__student-transfer {
+.schedule-detail__student-transfer {
     color: $color-blue;
     margin-right: 1rem;
     cursor: pointer;
 }
 
-.schedule__student-remove {
+.schedule-detail__student-remove {
     color: $color-red;
     cursor: pointer;
 }
 
-.schedule__student-option {
+.schedule-detail__student-option {
     display: none;
     @include bp(md){
         display: inline-block;
