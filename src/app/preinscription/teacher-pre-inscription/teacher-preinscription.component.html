@@ -1,7 +1,7 @@
 <div class="teacher-pre-inscription__header" (click)="hideMenuLevel()">Welcome <b>Robert</b>. <br/>Please select the schedules in which you can teach english in our offices.</div>
 <div class="teacher-pre-inscription__body" (click)="hideMenuLevel()">
   <div *ngIf="showMessage" class="teacher-pre-inscription__alert">
-    <app-message-box [message]="message" [type]="messageType" [showMessage]="showMessage"></app-message-box>
+    <!--<app-message-box [message]="message" [type]="messageType" [showMessage]="showMessage"></app-message-box>-->
   </div>
   <div class="teacher-pre-inscription__content" *ngIf="!showMessage">
     <div class="teacher-pre-inscription__information">
@@ -10,32 +10,32 @@
         <div class="teacher-pre-inscription__schedule-item">
             <input type="checkbox">
             <span>Monday - Wednesday</span>
-            <span>08:00 - 09:30</span>            
+            <span>08:00 - 09:30</span>
         </div>
         <div class="teacher-pre-inscription__schedule-item">
             <input type="checkbox">
             <span>Monday - Wednesday</span>
-            <span>12:00 - 13:30</span>            
+            <span>12:00 - 13:30</span>
         </div>
-        <div class="teacher-pre-inscription__schedule-item">            
+        <div class="teacher-pre-inscription__schedule-item">
             <input type="checkbox">
             <span>Monday - Wednesday</span>
-            <span>17:00 - 18:30</span>            
+            <span>17:00 - 18:30</span>
         </div>
         <div class="teacher-pre-inscription__schedule-item">
             <input type="checkbox">
             <span>Tuesday - Thursday</span>
-            <span>08:00 - 09:30</span>            
+            <span>08:00 - 09:30</span>
         </div>
         <div class="teacher-pre-inscription__schedule-item">
             <input type="checkbox">
             <span>Tuesday - Thursday</span>
-            <span>12:00 - 13:30</span>            
+            <span>12:00 - 13:30</span>
         </div>
         <div class="teacher-pre-inscription__schedule-item">
             <input type="checkbox">
             <span>Tuesday - Thursday</span>
-            <span>17:00 - 18:30</span>            
+            <span>17:00 - 18:30</span>
         </div>
       </div>
 
@@ -43,7 +43,7 @@
         <b>Select your level preferences</b>
         <div class="teacher-pre-inscription__dropdown" (click)="showMenuLevel();$event.stopPropagation();">
           <span>Level</span>
-          <span class="teacher-pre-inscription__triangule"></span>          
+          <span class="teacher-pre-inscription__triangule"></span>
         </div>
 
         <div class="teacher-pre-inscription__list" *ngIf="isMenuListVisible" (click)="$event.stopPropagation();">

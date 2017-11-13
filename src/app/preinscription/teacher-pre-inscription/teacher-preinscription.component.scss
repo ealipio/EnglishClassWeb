@@ -1,5 +1,5 @@
-@import '../../styles/helpers/variables.scss';
-@import '../../styles/helpers/mixins.scss';
+@import '../../styles/helpers/variables';
+@import '../../styles/helpers/mixins';
 
 .teacher-pre-inscription__header {
     color: $color-white;
@@ -14,7 +14,7 @@
 
 .teacher-pre-inscription__body {
     display: flex;
-    height: calc(100% - 80px);    
+    height: calc(100% - 80px);
     background: url(/assets/imagenes/background-cars.jpeg) no-repeat center center fixed;
     background-size: cover;
     position: relative;
@@ -81,7 +81,7 @@
     margin-top: 1rem;
 }
 
-.teacher-pre-inscription__triangule {    
+.teacher-pre-inscription__triangule {
     width: 0;
     height: 0;
     border-left: 6px solid transparent;

@@ -1,5 +1,4 @@
 import { Component, Input, ElementRef, OnInit, DoCheck, Renderer2 } from '@angular/core';
-import { Constants } from '../../../services/constants';
 
 @Component({
   selector: 'app-message-box',

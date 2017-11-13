@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageBox } from '../../shared/models/message-box';
-import { ScheduleService } from '../../services/schedule.service';
+import { MessageBox } from '../../common/models/message-box';
+import { ScheduleService } from '../services/schedule.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

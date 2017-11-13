@@ -1,7 +1,7 @@
 <div class="student-pre-inscription__header">Welcome <b>Renzo Yarlequé</b>. <br/>Please select the hours in which you'd like to take the English Classes.</div>
 <div class="student-pre-inscription__body">
   <div *ngIf="showMessage" class="student-pre-inscription__alert">
-    <app-message-box [message]="message" [type]="messageType" [showMessage]="showMessage"></app-message-box>
+    <!--<app-message-box [message]="message" [type]="messageType" [showMessage]="showMessage"></app-message-box>-->
   </div>
   <div class="student-pre-inscription__content" *ngIf="!showMessage">
     <div>
@@ -10,7 +10,7 @@
           <input type="radio" name="studentSchedule" value="1"><span class="radio__text">08:00 - 09:30</span><br>
           <input type="radio" name="studentSchedule" value="2"><span class="radio__text">12:00 - 13:30</span><br>
           <input type="radio" name="studentSchedule" value="3"><span class="radio__text">17:00 - 18:30 </span>
-      </form> 
+      </form>
     </div>
     <div>
         <button (click)="save()">Save</button>

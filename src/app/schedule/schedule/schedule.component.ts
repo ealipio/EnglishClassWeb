@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageBox } from '../../shared/models/message-box';
-import { ScheduleService } from '../../services/schedule.service';
+import { MessageBox } from '../../common/models/message-box';
+import { ScheduleService } from '../services/schedule.service';
 
 @Component({
   selector: 'app-schedule',
@@ -11,7 +11,7 @@ import { ScheduleService } from '../../services/schedule.service';
 export class ScheduleComponent extends MessageBox implements OnInit {
   buttonText = 'Generate Groups';
   isSpinnerVisible = false;
-  isCardsVisible :boolean;
+  isCardsVisible: boolean;
   groups = null;
   areGroupsGenerate = false;
   constructor(private scheduleService: ScheduleService) {

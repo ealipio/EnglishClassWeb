@@ -1,8 +1,8 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { AuthorizationService } from '../../shared/services/authorization.service';
-import { Constants } from '../../services/constants';
+import { AuthorizationService } from '../../common/services/authorization.service';
+import { Constants } from '../../common/constants/constants';
 
 @Component({
   selector: 'app-topmenu',

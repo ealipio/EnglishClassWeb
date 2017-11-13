@@ -1,5 +1,5 @@
 import { Directive, ElementRef, Input, OnInit, DoCheck, Renderer2 } from '@angular/core';
-import { Constants } from '../../services/constants';
+import { Constants } from '../constants/constants';
 
 @Directive({
   selector: '[messageBoxType]'
