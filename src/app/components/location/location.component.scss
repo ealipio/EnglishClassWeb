@@ -1,0 +1,27 @@
+@import '../../styles/helpers/variables.scss';
+@import '../../styles/helpers/mixins.scss';
+
+.locacition__title {
+    color: $color-white;
+    line-height: 1.5rem;
+    background: $color-blue;
+    position: relative;
+    z-index: 10;
+    text-align: left;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
+}
+
+.location__content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.location__card {
+        display: flex;
+        flex-direction: column;
+        @include bp(md){
+            flex-direction: row;
+        }
+}

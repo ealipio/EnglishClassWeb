@@ -13,6 +13,8 @@ import { ScheduleComponent } from './components//schedule/schedule.component';
 import { ScheduleDetailComponent } from './components/schedule-detail/schedule-detail.component';
 import { StudentPreInscriptionComponent } from './components/student-preinscription/student-preinscription.component';
 import { TeacherPreInscriptionComponent } from './components/teacher-preinscription/teacher-preinscription.component';
+import { LocationComponent } from './components/location/location.component';
+
 import { ScheduleService } from './services/schedule.service';
 import { MessageBoxComponent } from './shared/components/message-box/message-box.component';
 import { MessageBoxTypeDirective } from './shared/directives/message-box-type.directive';
@@ -28,6 +30,7 @@ import { AuthorizationService } from './shared/services/authorization.service';
     ScheduleDetailComponent,
     StudentPreInscriptionComponent,
     TeacherPreInscriptionComponent,
+    LocationComponent,
     MessageBoxComponent,
     MessageBoxTypeDirective
 ],

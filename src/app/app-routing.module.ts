@@ -7,6 +7,8 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 import { ScheduleDetailComponent } from './components/schedule-detail/schedule-detail.component';
 import { StudentPreInscriptionComponent } from './components/student-preinscription/student-preinscription.component';
 import { TeacherPreInscriptionComponent } from './components/teacher-preinscription/teacher-preinscription.component';
+import { LocationComponent } from './components/location/location.component';
+
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -16,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'schedule/:id', component: ScheduleDetailComponent },
   { path: 'pre-inscription/student', component: StudentPreInscriptionComponent },
   { path: 'pre-inscription/teacher', component: TeacherPreInscriptionComponent },
+  { path: 'location', component: LocationComponent },
   { path: '**', redirectTo: 'login'}
 ];
 
