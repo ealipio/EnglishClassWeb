@@ -21,11 +21,9 @@ export class LoginComponent implements OnInit, DoCheck {
     }
   }
   login() {
-    const userLogged = this.authService.login(this.user.username, this.user.password);
-    if (!userLogged) {
-      alert('Wrong username or password, please try again.');
-      this.user.username = '';
-      this.user.password = '';
-    }
+    this.authService.login(this.user.username, this.user.password)
+    .subscribe( (data) => {
+
+    })
   }
 }

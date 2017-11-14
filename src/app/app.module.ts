@@ -13,6 +13,7 @@ import { LocationComponent } from './components/location/location.component';
 import { MessageBoxComponent } from './common/components/message-box/message-box.component';
 import { MessageBoxTypeDirective } from './common/directives/message-box-type.directive';
 import { AuthorizationService } from './common/services/authorization.service';
+import { CustomHttpService } from './common/services/custom-http.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { AuthorizationService } from './common/services/authorization.service';
     BrowserAnimationsModule,
     FormsModule
   ],
-  providers: [AuthorizationService],
+  providers: [AuthorizationService, CustomHttpService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
