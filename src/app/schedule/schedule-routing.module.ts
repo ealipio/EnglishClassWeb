@@ -6,7 +6,7 @@ import { ScheduleDetailComponent } from './schedule-detail/schedule-detail.compo
 
 const scheduleRoutes: Routes = [
   { path: '', component: ScheduleComponent },
-  { path: 'schedule-detail', component: ScheduleDetailComponent }
+  { path: 'schedule-detail/:id', component: ScheduleDetailComponent }
 ];
 
 @NgModule({

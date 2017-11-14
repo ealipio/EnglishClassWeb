@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { PreInscriptionRoutingModule } from './preinscription-routing.module';
-import {TeacherPreInscriptionComponent} from './teacher-pre-inscription/teacher-preinscription.component';
+import {TeacherPreInscriptionComponent} from './teacher-preinscription/teacher-preinscription.component';
 import {StudentPreInscriptionComponent} from './student-preinscription/student-preinscription.component';
 
 @NgModule({

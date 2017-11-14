@@ -18,7 +18,6 @@ export class ScheduleComponent extends MessageBox implements OnInit {
     super();
     this.getScheduleStatus();
     this.getSchedules();
-
   }
 
   ngOnInit() {

@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit, DoCheck {
     }
   }
   login() {
-    this.authService.login(this.user.username, this.user.password)
-    .subscribe( (data) => {
+    this.authService.login(this.user.username, this.user.password);
+    /*.subscribe( (data) => {
 
-    })
+    })*/
   }
 }
