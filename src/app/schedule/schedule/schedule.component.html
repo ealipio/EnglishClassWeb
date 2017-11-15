@@ -53,7 +53,7 @@
     <div class="schedule__list">
       <!--<app-message-box [message]="message" [type]="messageType" [showMessage]="showMessage"></app-message-box>-->
       <ng-container *ngFor="let group of groups">
-        <a routerLink="/schedule-detail/{{group.idGroup}}">
+        <a routerLink="detail/{{group.idGroup}}">
         <div class="schedule__card" [ngClass]="{'schedule__card--unassigned': group.teacherName === 'Unassigned'}">
           <div class="schedule__card-content">
             <div class="schedule__card-item">

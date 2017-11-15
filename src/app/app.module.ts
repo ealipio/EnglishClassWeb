@@ -14,6 +14,7 @@ import { MessageBoxComponent } from './common/components/message-box/message-box
 import { MessageBoxTypeDirective } from './common/directives/message-box-type.directive';
 import { AuthorizationService } from './common/services/authorization.service';
 import { CustomHttpService } from './common/services/custom-http.service';
+import { AuthGuardService } from './common/services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { CustomHttpService } from './common/services/custom-http.service';
     BrowserAnimationsModule,
     FormsModule
   ],
-  providers: [AuthorizationService, CustomHttpService],
+  providers: [AuthorizationService, AuthGuardService, CustomHttpService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -49,7 +49,7 @@ export class ScheduleComponent extends MessageBox implements OnInit {
       });
   }
 
-  private getScheduleStatus (){
+  private getScheduleStatus () {
     this.scheduleService.getScheduleStatus().subscribe(
       result => {
         this.isCardsVisible = result;

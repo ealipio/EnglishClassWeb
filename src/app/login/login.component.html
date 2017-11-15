@@ -1,5 +1,5 @@
 <div class="login-container">
-  <div class="login-form">
+  <div class="login-form" (keypress)="keyPressLogin($event)">
     <div class="login-item">
       <input class="login-item__input input-text" type="text" [(ngModel)]="user.username"/>
       <label for="">Username</label>

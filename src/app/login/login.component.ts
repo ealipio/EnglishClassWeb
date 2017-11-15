@@ -26,4 +26,9 @@ export class LoginComponent implements OnInit, DoCheck {
 
     })*/
   }
+  keyPressLogin(event: KeyboardEvent) {
+    if (event.charCode === 13) {
+      this.login();
+    }
+  }
 }

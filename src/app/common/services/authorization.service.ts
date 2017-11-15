@@ -4,6 +4,7 @@ import { Http, Headers, RequestOptionsArgs } from '@angular/http';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { User } from '../models/user';
+import { Constants } from '../constants/constants';
 
 @Injectable()
 export class AuthorizationService {
@@ -21,13 +22,13 @@ export class AuthorizationService {
       name: 'User-Teacher',
       username: 'teacher',
       password: '123456',
-      type: 'teacher'
+      type: 'Teacher'
     },
     {
       name: 'User-Student',
       username: 'student',
       password: '123456',
-      type: 'student'
+      type: 'Student'
     }];
 
   constructor(private router: Router, private http: Http) { }
@@ -58,7 +59,7 @@ export class AuthorizationService {
       if (user.username === username && user.password === password) {
         localStorage.setItem('user',
           `{"name": "${user.name}","username": "${user.username}","password": "${user.password}","type": "${user.type}"}`);
-        this.router.navigate((['home']));
+        this.redirectByUserType(user.type);
         validUser = true;
       }
     });
@@ -88,6 +89,14 @@ export class AuthorizationService {
     const error = JSON.parse(data._body);
     console.error('Error: ', error.error_description);
     return error.error_description;
+  }
+
+  private redirectByUserType(type: string) {
+    if (type === Constants.USER_TYPE_ADMIN) {
+      this.router.navigate(['location']);
+    }else {
+      this.router.navigate(['home']);
+    }
   }
 }
 
