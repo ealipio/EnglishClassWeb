@@ -7,7 +7,7 @@ import { TeacherScheduleService } from '../services/teacher-schedule.service';
     templateUrl: './teacher-list-schedule.component.html',
     styleUrls: ['./teacher-list-schedule.component.scss']
   })
-  export class TeacherListScheduleComponent extends MessageBox implements OnInit, DoCheck {
+  export class TeacherListScheduleComponent extends MessageBox implements OnInit {
     officeId: number;
     teachers = null;
     private teacherScheduleService: TeacherScheduleService;
@@ -20,14 +20,6 @@ import { TeacherScheduleService } from '../services/teacher-schedule.service';
     }
 
     ngOnInit() {
-    }
-
-    ngDoCheck() {
-      /*
-      if (this.authService.isUserLogged()) {
-        this.router.navigate(['home']);
-      }
-      */
     }
     
     private getTeachers(officeId: number) {
