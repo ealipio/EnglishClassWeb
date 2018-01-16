@@ -12,6 +12,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
   { path: 'schedule', loadChildren: 'app/schedule/schedule.module#ScheduleModule' },
   { path: 'pre-inscription', loadChildren: 'app/preinscription/preinscription.module#PreInscriptionModule' },
+  { path: 'teacher-schedule', loadChildren: 'app/teacher-schedule/teacher-schedule.module#TeacherScheduleModule' },
   { path: 'location', component: LocationComponent, canActivate: [AuthGuardService] },
   { path: '**', redirectTo: 'login'}
 ];

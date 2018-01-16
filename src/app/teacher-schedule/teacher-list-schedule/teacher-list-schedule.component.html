@@ -1,0 +1,28 @@
+
+<div class="teacher-list-schedule__header">
+    <div class="teacher-list-schedule__header-content">
+      <b><span>Teachers:</span></b>
+    </div>
+</div>
+<div class="teacher-list-schedule">
+  <div *ngIf="showMessage" class="teacher-list-schedule__alert">    
+  </div>
+  <div *ngIf="!showMessage">
+    <div class="teacher-list-schedule__list">      
+        <ng-container *ngFor="let teacher of teachers">
+          <a routerLink="detail/{{teacher.idTeacher}}">      
+            <div class="teacher-list-schedule__card">
+              <div class="teacher-list-schedule__card-content">
+                <div class="teacher-list-schedule__card-item">
+                    <span class=""><b>{{teacher.name}} {{teacher.lastName}}</b></span>                                
+                </div>
+              </div>
+              <div>
+                  <i class="fa fa-chevron-right"></i>
+              </div>
+            </div>      
+          </a>
+        </ng-container>
+      </div>
+  </div>
+</div>

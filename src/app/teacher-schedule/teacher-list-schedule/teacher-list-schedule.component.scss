@@ -1,0 +1,150 @@
+@import '../../styles/helpers/variables.scss';
+@import '../../styles/helpers/mixins.scss';
+
+
+.teacher-list-schedule__alert {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.teacher-list-schedule__header {
+    color: $color-white;
+    line-height: 1.5rem;
+    background: $color-blue;
+    position: relative;
+    z-index: 10;
+    text-align: left;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);  
+}
+
+.teacher-list-schedule__header-content{
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    @include bp(sm) {
+        width: 22rem;        
+    }    
+    @include bp(xl){
+        width: 32rem;
+    }
+}
+
+
+.teacher-list-schedule {
+   display: flex;
+   flex-flow: column;
+   background: url(/assets/imagenes/background-cars.jpeg) no-repeat center center fixed;
+   background-size: cover;
+   min-height: 37.5rem;
+   @include bp(md){
+    min-height: 60rem;
+   }
+   @include bp(lg){
+    flex-flow: row;
+    justify-content: center;
+    min-height: 45.5rem;
+   }
+   @include bp(xl){
+    min-height: 51.5rem;
+   }
+   @include bp(xxl){
+    min-height: 55rem;
+   }
+}
+
+label{
+    display: block;
+}
+option{
+    color: $color-black;
+}
+
+.teacher-list-schedule__list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.teacher-list-schedule__card {
+    display: flex;
+    flex-direction: row;
+    width: 19.5rem;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0.5rem;
+    min-height: 3.25rem;
+    padding: 1rem;
+    color: $color-white;
+    background-color: $color-blue;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-alt-orange;
+        .schedule__card__availability {
+            color: $color-blue;
+        }
+    }
+    @include bp(md) {
+        width: 20rem;
+        margin-bottom: 1rem;
+    }
+    @include bp(lg){
+        width: 20rem;
+    }
+    @include bp(xl){
+        width: 30rem;
+    }
+}
+
+.teacher-list-schedule__card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-right: 1rem;
+}
+
+.teacher-list-schedule__card-item {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 4.5rem;
+    width: 100%;
+    @include bp(xs){
+        flex-direction: row;
+        min-height: 3rem;
+        align-items: center;
+        flex: 1 1 auto;
+        min-height: 3.25rem;        
+        width: 5rem;
+    }      
+    @include bp(sm){
+        flex-direction: row;
+        min-height: 3rem;
+        align-items: center;
+        flex: 1 1 auto;
+        min-height: 3.25rem;        
+        width: 5rem;
+    }    
+    @include bp(md){
+        flex-direction: row;
+        min-height: 3rem;
+        align-items: center;
+        flex: 1 1 auto;
+        min-height: 3.25rem;
+        width: 10rem;
+        //justify-content: space-around;
+    }    
+}
+
+.teacher-list-schedule__card-item--right {
+    align-items: flex-end;
+    @include bp(md){
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+}
