@@ -1,0 +1,91 @@
+@import '../../styles/helpers/variables.scss';
+@import '../../styles/helpers/mixins.scss';
+
+.teacher-edit-schedule__header {
+    color: $color-white;
+    margin-bottom: 2rem;
+    line-height: 1.5rem;
+    background: $color-blue;
+    position: relative;
+    z-index: 10;
+    text-align: left;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);  
+}
+
+.teacher-edit-schedule__body {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    @include bp(md) {
+        flex-direction: row;
+        padding: 1rem 2rem;
+    }
+    @include bp(lg){
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
+
+.teacher-edit-schedule__left-section {
+    @include bp(md){
+        width: 50%;
+        margin-right: 6rem;
+    }
+    @include bp(lg){
+        margin-right: 8rem;
+    }
+}
+
+.teacher-edit-schedule__right-section {
+    display: flex;
+    justify-content: space-between;
+    @include bp(md){
+        width: 50%;
+        flex: 5;
+    }
+}
+
+.teacher-edit-schedule-plus {
+    color: $color-white;
+    background: $color-orange;
+    font-size: 2rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    transform: scale(0.75);
+    box-shadow: 3px 2px 5px 0 rgba(0, 0, 0, 0.2);
+    // box-shadow: 1px 1px 7px 0 $color-orange;
+    margin-top: -0.5rem;
+}
+
+
+
+
+//todo
+//create a common directive
+
+.english-dropdown {
+    margin-bottom: 2rem;
+    border: 1.5px solid $color-blue;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
+    min-width: 7rem;
+}
+
+.english-dropdown__header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+
+.english-dropdown__icon {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    margin-top: 0.2rem;
+    border-top: 11px solid $color-blue;
+}
+
