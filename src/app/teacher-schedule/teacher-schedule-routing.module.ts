@@ -6,8 +6,8 @@ import { TeacherEditScheduleComponent } from './teacher-edit-schedule/teacher-ed
 import { AuthGuardService } from '../common/services/auth-guard.service';
 
 const teacherScheduleRoutes: Routes = [
-  { path: 'list', component: TeacherListScheduleComponent, canActivate: [AuthGuardService] }, 
-  { path: 'edit', component: TeacherEditScheduleComponent, canActivate: [AuthGuardService] }
+  { path: '', component: TeacherListScheduleComponent, canActivate: [AuthGuardService] }, 
+  { path: 'edit/:id', component: TeacherEditScheduleComponent, canActivate: [AuthGuardService] }
 ];
 
 @NgModule({
