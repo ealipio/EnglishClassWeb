@@ -17,28 +17,26 @@
         </div>        
         <ul *ngIf="isDropdownVisible">            
             <ng-container *ngFor="let schedule of scheduleList">
-              <li (click)="setSchedule('L-M | 08:00-09:00')">{{schedule.name}}</li>
+              <li (click)="setSchedule(schedule.idSchedule)">{{schedule.name}}</li>
             </ng-container>          
         </ul>
       </div>
     </div>
 
     <div class="teacher-edit-schedule__right-section">
-
+      
       <!-- level dropdown -->
       <div class="english-dropdown">
           <div class="english-dropdown__header" (click)="showDropdown()">
               <span>{{levelValue}}</span>
               <span class="english-dropdown__icon"></span>
             </div>
-          <ul *ngIf="isDropdownVisible">
-            <li (click)="setLevel('2A')">2A</li>
-            <li (click)="setLevel('3A')">3A</li>
-            <li (click)="setLevel('3B')">3B</li>
-            <li (click)="setLevel('4A')">4A</li>
-            <li (click)="setLevel('4B')">4B</li>
-          </ul>
-        </div>
+            <ul *ngIf="isDropdownVisible">            
+              <ng-container *ngFor="let level of levelList">
+                  <li (click)="setLevel(level.idLevel)">{{level.levelName}}</li>
+                </ng-container> 
+            </ul>
+      </div>
 
       <!-- + icon -->
       <div>
