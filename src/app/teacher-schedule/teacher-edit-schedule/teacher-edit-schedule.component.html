@@ -1,6 +1,6 @@
 <div class="teacher-edit-schedule__header">
   <div>
-    <b><span>Teacher: {{teacher.name}} {{teacher.lastName}}</span></b>
+    <b><span>Teacher: {{teacher?.name}} {{teacher?.lastName}}</span></b>
   </div>
 </div>
 
@@ -11,14 +11,14 @@
 
       <!-- dropdown schedule -->
       <div class="english-dropdown">
-        <div class="english-dropdown__header">
-          <span>Select schedule</span>
+        <div class="english-dropdown__header" (click)="showDropdown()">
+          <span>{{scheduleValue}}</span>
           <span class="english-dropdown__icon"></span>
-        </div>
-        <ul>
+        </div>        
+        <ul *ngIf="isDropdownVisible">            
             <ng-container *ngFor="let schedule of scheduleList">
-              <li>{{schedule.name}}</li>
-            </ng-container>
+              <li (click)="setSchedule('L-M | 08:00-09:00')">{{schedule.name}}</li>
+            </ng-container>          
         </ul>
       </div>
     </div>
@@ -27,16 +27,16 @@
 
       <!-- level dropdown -->
       <div class="english-dropdown">
-          <div class="english-dropdown__header">
-              <span>Select Level</span>
+          <div class="english-dropdown__header" (click)="showDropdown()">
+              <span>{{levelValue}}</span>
               <span class="english-dropdown__icon"></span>
             </div>
-          <ul>
-            <li>2A</li>
-            <li>3A</li>
-            <li>3B</li>
-            <li>4A</li>
-            <li>4B</li>
+          <ul *ngIf="isDropdownVisible">
+            <li (click)="setLevel('2A')">2A</li>
+            <li (click)="setLevel('3A')">3A</li>
+            <li (click)="setLevel('3B')">3B</li>
+            <li (click)="setLevel('4A')">4A</li>
+            <li (click)="setLevel('4B')">4B</li>
           </ul>
         </div>
 

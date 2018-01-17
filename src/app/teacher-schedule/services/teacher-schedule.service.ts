@@ -10,11 +10,32 @@ export class TeacherScheduleService {
 
 constructor(private http: Http, private service: CustomHttpService) { }
 
-  public getTeachersByOffice(officeId: number) {        
+    public getTeachersByOffice(officeId: number) {        
         return this.http.get(`${this.API_ENDPOINT}/teacher/teachersbyoffice?officeId=${officeId}`)
         .map( result => {
-               return result.json();
-    });
-  }    
+                return result.json();
+        });
+    }
+  
+    public getTeacher(teacherId: number) {        
+        return this.http.get(`${this.API_ENDPOINT}/teacher/teacherbyid?teacherId=${teacherId}`)
+        .map( result => {
+            return result.json();
+        });
+    }
+
+    public getSchedulesByTeacher(teacherId: number) {        
+        return this.http.get(`${this.API_ENDPOINT}/schedule/schedulesbyteacher?teacherId=${teacherId}`)
+        .map( result => {
+            return result.json();
+        });
+    }
+    
+    public getLevelsByCourse(courseId: number) {        
+        return this.http.get(`${this.API_ENDPOINT}/course/levelsbycourse?courseId=${courseId}`)
+        .map( result => {
+            return result.json();
+        });
+    }       
 
 }

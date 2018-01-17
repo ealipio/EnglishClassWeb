@@ -12,12 +12,17 @@ export class TeacherEditScheduleComponent extends MessageBox implements OnInit {
   teacherId: number;
   teacher = null;
   scheduleList = null;
+  isDropdownVisible: boolean;
+  scheduleValue : string;
+  levelValue : string;
 
   constructor(private route: ActivatedRoute, private teacherScheduleService: TeacherScheduleService) { 
     super();
     this.teacherId = this.route.snapshot.params['id'];
+    this.scheduleValue = 'Select Schedule';
+    this.isDropdownVisible = false;    
     this.getTeacherById(this.teacherId);
-    this.getSchedulesByTeacher(this.teacherId);
+    this.getSchedulesByTeacher(this.teacherId);    
   }
 
   ngOnInit() {
@@ -43,6 +48,20 @@ export class TeacherEditScheduleComponent extends MessageBox implements OnInit {
         this.messageType = 'error';
         this.showMessage = true;
       });
+  }
+  
+  private showDropdown () {
+    this.isDropdownVisible = true;
+  }
+
+  private setSchedule (schedule:string) {
+    this.scheduleValue = schedule;
+    this.isDropdownVisible = false;
+  }
+
+  private setLevel (level:string) {
+    this.levelValue = level;
+    this.isDropdownVisible = false;
   }
 
 }
