@@ -11,14 +11,14 @@
 
       <!-- dropdown schedule -->
       <div class="english-dropdown">
-        <div class="english-dropdown__header">
-          <span>Select schedule</span>
+        <div class="english-dropdown__header" (click)="showDropdown()">
+          <span>{{scheduleValue}}</span>
           <span class="english-dropdown__icon"></span>
         </div>
-        <ul>
-          <li>Lunes - Martes 08:00 - 10:00</li>
-          <li>Miercoles - Jueves 08:00 - 10:00</li>
-          <li>Lunes - Viernes 08:00 - 10:00</li>
+        <ul *ngIf="isDropdownVisible">
+          <li (click)="setSchedule('L-M | 08:00-09:00')">Lunes - Martes 08:00 - 10:00</li>
+          <li (click)="setSchedule('M-J | 09:00-10:00')">Miercoles - Jueves 08:00 - 10:00</li>
+          <li (click)="setSchedule('J-M | 10:00-13:00')">Lunes - Viernes 08:00 - 10:00</li>
         </ul>
       </div>
 
@@ -29,16 +29,16 @@
 
       <!-- level dropdown -->
       <div class="english-dropdown">
-          <div class="english-dropdown__header">
-              <span>Select Level</span>
+          <div class="english-dropdown__header" (click)="showDropdown()">
+              <span>{{levelValue}}</span>
               <span class="english-dropdown__icon"></span>
             </div>
-          <ul>
-            <li>2A</li>
-            <li>3A</li>
-            <li>3B</li>
-            <li>4A</li>
-            <li>4B</li>
+          <ul *ngIf="isDropdownVisible">
+            <li (click)="setLevel('2A')">2A</li>
+            <li (click)="setLevel('3A')">3A</li>
+            <li (click)="setLevel('3B')">3B</li>
+            <li (click)="setLevel('4A')">4A</li>
+            <li (click)="setLevel('4B')">4B</li>
           </ul>
         </div>
 
